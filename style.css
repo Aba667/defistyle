@@ -397,3 +397,69 @@ footer p {
     from { transform: scale(0.7); opacity: 0; }
     to { transform: scale(1); opacity: 1; }
 }
+/* --- ADAPTATION POUR MOBILE ET TABLETTE --- */
+@media (max-width: 768px) {
+    
+    /* Hero Section : On réduit la taille du texte */
+    #hero h1 {
+        font-size: 3.5rem;
+        padding: 10px 20px;
+    }
+
+    /* Conteneurs : On réduit les marges sur les côtés */
+    .container {
+        width: 92%;
+        padding: 60px 0;
+    }
+
+    /* Grille Projet : On passe de 2 colonnes à 1 colonne */
+    #projet .grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: left; /* Plus lisible sur mobile */
+    }
+
+    /* Mot du Président : Image au-dessus du texte */
+    .president-flex {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .president-img img {
+        height: 400px; /* Plus court pour ne pas prendre tout l'écran */
+        box-shadow: 15px 15px 0px var(--beige);
+    }
+
+    /* Activités : 1 seule colonne */
+    .activities-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Galerie : On passe à 2 colonnes pour voir les photos plus grandes */
+    .photo-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 250px;
+        gap: 8px;
+    }
+
+    /* Navigation : On simplifie le menu */
+    nav {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* Partenaires : Plus petits sur mobile */
+    .partners-grid {
+        gap: 30px;
+    }
+
+    .partner-item {
+        width: 120px;
+    }
+}
