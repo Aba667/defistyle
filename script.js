@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // Boucle pour générer les 50 photos (def1 à def50)
         for (let i = 1; i <= 47; i++) {
             const img = document.createElement('img');
-            img.src = `../photo/def${i}.jpg`; 
+            img.src = `photo/def${i}.jpg`; 
             img.alt = `Défilé Défi'style - Création ${i}`;
             img.loading = "lazy"; // Optimisation des performances
             img.style.cursor = "zoom-in";
