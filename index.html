@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Défi'style | La Révérence de la Mode</title>
 
-    <link rel="icon" type="image/jpeg" href="photo/logo.jpeg">
+    <link rel="icon" type="image/jpeg" href="../photo/logo.jpeg">
+    
     <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    
+    </head>
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
 
     <header>
         <nav>
             <div class="logo">
-                <img src="photo/logo.jpeg" alt="Logo Défi'style">
+                <img src="../photo/logo.jpeg" alt="Logo Défi'style">
             </div>
             <ul>
                 <li><a href="#projet">Le projet</a></li>
@@ -48,7 +50,7 @@
     <section id="president" class="container">
         <div class="president-flex">
             <div class="president-img">
-                <img src="photo/president.jpg" alt="Président de Défi'style">
+                <img src="../photo/president.jpg" alt="Président de Défi'style">
             </div>
             <div class="president-text">
                 <h2>Mot du président</h2>
@@ -70,7 +72,7 @@
             <div class="activities-grid">
                 <div class="card">
                     <h3>Dress to Impress</h3>
-                    <p>Concours-défilé de mode ouvert à tous et à toutes pour exprimer la passion, la créativité, le talent, ...</p>
+                    <p>Concours-défilé de mode ouvert à tous et à toutes pour exprimer la passion, la créativité et le talent.</p>
                 </div>
                 <div class="card">
                     <h3>Fashion Day</h3>
@@ -78,7 +80,7 @@
                 </div>
                 <div class="card">
                     <h3>Discovering Fashion</h3>
-                    <p>À la découverte des grandes marques et maisons de Haute couture.</p>
+                    <p>À la découverte des grandes marques et maisons de haute couture.</p>
                 </div>
             </div>
         </div>
@@ -86,20 +88,39 @@
 
     <section id="galerie" class="container">
         <h2>Galerie Défi'style</h2>
-        <div class="photo-gallery" id="gallery-grid"></div>
+        
+        <div class="gallery-section">
+            <h3>Spectacle Dress to Impress - 24 Janvier à Lyon</h3>
+            <div class="photo-gallery" id="gallery-lyon">
+                </div>
+            <div class="btn-container">
+                <button id="btn-lyon" class="btn-load-more">Afficher les autres photos</button>
+            </div>
+        </div>
+
+        <hr class="gallery-separator">
+
+        <div class="gallery-section">
+            <h3>Lancement officiel - 30 Août 2025 à Metz</h3>
+            <div class="photo-gallery" id="gallery-metz">
+                </div>
+            <div class="btn-container">
+                <button id="btn-metz" class="btn-load-more">Afficher les autres photos</button>
+            </div>
+        </div>
     </section>
 
     <section id="partenaires" class="bg-light">
         <div class="container">
             <h2>Nos partenaires et collaborateurs</h2>
             <div class="partners-grid">
-                <div class="partner-item"><img src="photo/p1.png" alt="Ville de Metz"><p>Ville de Metz</p></div>
-                <div class="partner-item"><img src="photo/p2.png" alt="Le Cap"><p>Le Cap – Maison des étudiants</p></div>
-                <div class="partner-item"><img src="photo/p3.png" alt="Maison des étudiants"><p>Maison des étudiants</p></div>
-                <div class="partner-item"><img src="photo/p4.png" alt="Association des Sénégalais de la Moselle"><p>Association des Sénégalais de la Moselle</p></div>
-                <div class="partner-item"><img src="photo/p5.png" alt="Étudiants sénégalais Metz"><p>Association des étudiants sénégalais de Metz</p></div>
-                <div class="partner-item"><img src="photo/p6.png" alt="Étudiants sénégalais Lyon"><p>Collectif des étudiants sénégalais de Lyon</p></div>
-                <div class="partner-item"><img src="photo/p7.png" alt="Too Graphiste"><p>Too Graphiste</p></div>
+                <div class="partner-item"><img src="../photo/p1.png" alt="Ville de Metz"><p>Ville de Metz</p></div>
+                <div class="partner-item"><img src="../photo/p2.png" alt="Le Cap"><p>Le Cap – Maison des étudiants</p></div>
+                <div class="partner-item"><img src="../photo/p3.png" alt="Maison des étudiants"><p>Maison des étudiants</p></div>
+                <div class="partner-item"><img src="../photo/p4.png" alt="Association des Sénégalais de la Moselle"><p>Association des Sénégalais de la Moselle</p></div>
+                <div class="partner-item"><img src="../photo/p5.png" alt="Étudiants sénégalais Metz"><p>Association des étudiants sénégalais de Metz</p></div>
+                <div class="partner-item"><img src="../photo/p6.png" alt="Étudiants sénégalais Lyon"><p>Collectif des étudiants sénégalais de Lyon</p></div>
+                <div class="partner-item"><img src="../photo/p7.png" alt="Too Graphiste"><p>Too Graphiste</p></div>
             </div>
         </div>
     </section>
@@ -129,12 +150,12 @@
         <p>&copy; 2026 Défi'style – 8 place Jeanne d'Arc, 57000 Metz</p>
     </footer>
 
-    <script src="script.js"></script>
-
     <div id="lightbox" class="lightbox">
         <span class="close-lightbox">&times;</span>
         <img class="lightbox-content" id="lightbox-img">
     </div>
+
+    <script src="script.js"></script>
 
 </body>
 </html>
