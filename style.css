@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,900;1,400&family=Montserrat:wght@200;400;700&display=swap');
 
 :root {
-    --beige: #dfd3bd; /* Couleur exacte de votre logo */
+    --beige: #dfd3bd;
     --noir: #1a1a1a;
     --blanc: #ffffff;
     --gris-clair: #f9f9f9;
@@ -11,14 +11,16 @@
 
 /* --- RESET & BASE --- */
 * { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
+    margin: 0; padding: 0; box-sizing: border-box; 
+    /* Sécurité anti-copie */
+    -webkit-user-select: none; -ms-user-select: none; user-select: none; 
+    -webkit-user-drag: none;
 }
 
-html {
-    scroll-behavior: smooth;
-}
+/* On autorise la sélection pour les liens et contacts */
+a { user-select: text; }
+
+html { scroll-behavior: smooth; }
 
 body {
     background-color: var(--blanc);
@@ -40,47 +42,28 @@ header {
 }
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 90%;
-    max-width: 1400px;
-    margin: auto;
+    display: flex; justify-content: space-between; align-items: center;
+    width: 90%; max-width: 1400px; margin: auto;
 }
 
-.logo img {
-    height: 75px;
-    transition: var(--transition);
-}
+.logo img { height: 75px; transition: var(--transition); }
 
-nav ul { 
-    display: flex; 
-    list-style: none; 
-    gap: 40px; 
-}
+nav ul { display: flex; list-style: none; gap: 40px; }
 
 nav ul li a {
-    text-decoration: none;
-    color: var(--noir);
-    font-weight: 700;
-    font-size: 10px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    position: relative;
+    text-decoration: none; color: var(--noir);
+    font-weight: 700; font-size: 10px;
+    letter-spacing: 3px; text-transform: uppercase;
     transition: var(--transition);
 }
 
-nav ul li a:hover {
-    color: var(--beige);
-}
+nav ul li a:hover { color: var(--beige); }
 
 /* --- HERO SECTION --- */
 #hero {
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
     background: var(--beige);
     text-align: center;
 }
@@ -88,121 +71,96 @@ nav ul li a:hover {
 #hero h1 {
     font-family: 'Bodoni Moda', serif;
     font-size: clamp(3rem, 12vw, 10rem);
-    font-weight: 900;
-    line-height: 0.85;
-    text-transform: uppercase;
-    margin-bottom: 20px;
+    font-weight: 900; line-height: 0.85;
+    text-transform: uppercase; margin-bottom: 20px;
 }
 
 #hero p {
-    font-size: 14px;
-    letter-spacing: 8px;
-    text-transform: uppercase;
-    font-weight: 400;
+    font-size: 14px; letter-spacing: 8px;
+    text-transform: uppercase; font-weight: 400;
 }
 
 /* --- SECTIONS GÉNÉRALES --- */
 .container { 
-    width: 80%; 
-    max-width: 1100px; 
-    margin: 0 auto; 
-    padding: 120px 0; 
+    width: 80%; max-width: 1100px; 
+    margin: 0 auto; padding: 120px 0; 
 }
 
 h2 {
-    font-family: 'Bodoni Moda', serif;
-    font-size: 3.5rem;
-    text-align: center;
-    margin-bottom: 70px;
-    text-transform: uppercase;
+    font-family: 'Bodoni Moda', serif; font-size: 3.5rem;
+    text-align: center; margin-bottom: 70px; text-transform: uppercase;
 }
 
-/* --- SECTION PROJET (Centrée et Aérée) --- */
+/* --- PROJET --- */
 #projet .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 100px;
-    text-align: justify;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 100px; text-align: justify;
 }
 
 #projet h3 {
-    font-family: 'Bodoni Moda', serif;
-    font-size: 1.8rem;
-    margin-bottom: 25px;
-    letter-spacing: 2px;
-    border-bottom: 2px solid var(--beige);
-    display: inline-block;
+    font-family: 'Bodoni Moda', serif; font-size: 1.8rem;
+    margin-bottom: 25px; letter-spacing: 2px;
+    border-bottom: 2px solid var(--beige); display: inline-block;
 }
 
-/* --- MOT DU PRÉSIDENT (Design Éditorial) --- */
-#president {
-    background-color: var(--gris-clair);
-}
+/* --- MOT DU PRÉSIDENT --- */
+#president { background-color: var(--gris-clair); }
 
 .president-flex {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: center;
 }
 
-.president-img {
-    position: relative;
-    padding: 20px;
-}
-
+.president-img { position: relative; padding: 20px; }
 .president-img img {
-    width: 100%;
-    height: auto;
-    max-height: 650px;
-    object-fit: cover;
-    box-shadow: 30px 30px 0px var(--beige); /* Décalage stylisé */
+    width: 100%; height: auto; max-height: 650px;
+    object-fit: cover; box-shadow: 30px 30px 0px var(--beige);
 }
 
 .president-text p {
-    font-family: 'Bodoni Moda', serif;
-    font-style: italic;
-    font-size: 1.4rem;
-    line-height: 2;
-    color: #444;
+    font-family: 'Bodoni Moda', serif; font-style: italic;
+    font-size: 1.4rem; line-height: 2; color: #444;
 }
 
 .signature {
-    display: block;
-    margin-top: 30px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 0.9rem;
+    display: block; margin-top: 30px;
+    font-weight: 700; text-transform: uppercase;
+    letter-spacing: 3px; font-size: 0.9rem;
 }
 
 /* --- ACTIVITÉS --- */
 .activities-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;
 }
 
 .card {
-    padding: 50px 30px;
-    border: 1px solid #eee;
-    text-align: center;
-    transition: var(--transition);
+    padding: 50px 30px; border: 1px solid #eee;
+    text-align: center; transition: var(--transition);
 }
 
 .card:hover {
-    background: var(--beige);
-    border-color: var(--beige);
+    background: var(--beige); border-color: var(--beige);
     transform: translateY(-10px);
 }
 
 .card h3 {
-    font-family: 'Bodoni Moda', serif;
-    margin-bottom: 20px;
-    font-size: 1.5rem;
+    font-family: 'Bodoni Moda', serif; margin-bottom: 20px; font-size: 1.5rem;
 }
 
-/* --- GALERIE PHOTO --- */
+/* --- GALERIE PHOTO (Styles Mises à jour) --- */
+.gallery-section { margin-bottom: 60px; }
+
+.gallery-section h3 {
+    font-family: 'Bodoni Moda', serif; font-size: 1.5rem;
+    margin-bottom: 30px; text-align: center;
+    color: var(--noir); letter-spacing: 1px;
+}
+
+.gallery-separator {
+    border: 0; height: 1px; background: var(--beige);
+    width: 50%; margin: 60px auto;
+}
+
 .photo-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -211,255 +169,124 @@ h2 {
 }
 
 .photo-gallery img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: grayscale(20%);
-    transition: var(--transition);
+    width: 100%; height: 100%; object-fit: cover;
+    filter: grayscale(20%); transition: var(--transition);
 }
 
 .photo-gallery img:hover {
-    filter: grayscale(0%);
-    transform: scale(0.97);
+    filter: grayscale(0%); transform: scale(0.97);
+}
+
+.hidden-photo { display: none; }
+
+.btn-container { text-align: center; margin-top: 30px; }
+
+.btn-load-more {
+    background-color: transparent; border: 1px solid var(--noir);
+    color: var(--noir); padding: 15px 30px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase; letter-spacing: 2px;
+    cursor: pointer; transition: var(--transition); font-size: 0.8rem;
+}
+
+.btn-load-more:hover {
+    background-color: var(--beige); border-color: var(--beige); color: var(--white);
 }
 
 /* --- PARTENAIRES --- */
-#partenaires {
-    background-color: var(--beige);
-}
+#partenaires { background-color: var(--beige); }
 
 .partners-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 60px;
-    padding: 20px;
+    display: flex; flex-wrap: wrap; justify-content: center;
+    gap: 60px; padding: 20px;
 }
 
-.partner-item {
-    text-align: center;
-    width: 180px;
-}
-
+.partner-item { text-align: center; width: 180px; }
 .partner-item img {
-    width: 120px;
-    height: 120px;
-    object-fit: contain;
-    mix-blend-mode: multiply; /* Fusionne le fond de l'image si blanc */
-    margin-bottom: 15px;
-    transition: var(--transition);
+    width: 120px; height: 120px; object-fit: contain;
+    mix-blend-mode: multiply; margin-bottom: 15px; transition: var(--transition);
+}
+.partner-item p {
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 1px; text-transform: uppercase;
 }
 
-.partner-item p {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+/* --- RÉSEAUX --- */
+#reseaux { text-align: center; background-color: var(--blanc); }
+.reseaux-flex {
+    display: flex; justify-content: center; gap: 100px; margin-top: 50px;
 }
+.reseau-item {
+    display: flex; flex-direction: column; align-items: center; transition: var(--transition);
+}
+.icon-circle {
+    width: 80px; height: 80px; background-color: var(--beige);
+    border-radius: 50%; display: flex; align-items: center;
+    justify-content: center; margin-bottom: 20px; transition: var(--transition);
+}
+.icon-circle img {
+    width: 35px; height: 35px; filter: brightness(0);
+}
+.reseau-item h3 { font-size: 1rem; letter-spacing: 3px; margin-bottom: 10px; }
+.reseau-item a {
+    text-decoration: none; color: var(--noir); font-weight: 200;
+    font-size: 0.9rem; border-bottom: 1px solid transparent; transition: var(--transition);
+}
+
+.reseau-item:hover .icon-circle {
+    background-color: var(--noir); transform: rotate(15deg);
+}
+.reseau-item:hover .icon-circle img { filter: invert(1); }
+.reseau-item:hover a { border-bottom: 1px solid var(--beige); color: var(--beige); }
 
 /* --- FOOTER --- */
 footer {
-    background: var(--noir);
-    color: var(--white);
-    padding: 100px 0;
-    text-align: center;
+    background: var(--noir); color: var(--blanc);
+    padding: 100px 0; text-align: center;
 }
+footer p { color: var(--beige); font-size: 12px; letter-spacing: 2px; }
 
-footer p {
-    color: var(--beige);
-    font-size: 12px;
-    letter-spacing: 2px;
-}
-
-/* --- RESPONSIVE --- */
-@media (max-width: 992px) {
-    .grid, .president-flex, .activities-grid {
-        grid-template-columns: 1fr;
-        gap: 50px;
-    }
-    
-    .container { width: 90%; }
-    
-    #hero h1 { font-size: 5rem; }
-}
-/* --- SECTION RÉSEAUX & CONTACT --- */
-#reseaux {
-    text-align: center;
-    background-color: var(--blanc);
-}
-
-.reseaux-flex {
-    display: flex;
-    justify-content: center;
-    gap: 100px;
-    margin-top: 50px;
-}
-
-.reseau-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: var(--transition);
-}
-
-.icon-circle {
-    width: 80px;
-    height: 80px;
-    background-color: var(--beige);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-    transition: var(--transition);
-}
-
-.icon-circle img {
-    width: 35px;
-    height: 35px;
-    filter: brightness(0); /* Rend les icônes noires pour le style mode */
-}
-
-.reseau-item h3 {
-    font-size: 1rem;
-    letter-spacing: 3px;
-    margin-bottom: 10px;
-}
-
-.reseau-item a {
-    text-decoration: none;
-    color: var(--noir);
-    font-weight: 200;
-    font-size: 0.9rem;
-    border-bottom: 1px solid transparent;
-    transition: var(--transition);
-}
-
-/* --- EFFETS AU SURVOL --- */
-.reseau-item:hover .icon-circle {
-    background-color: var(--noir);
-    transform: rotate(15deg);
-}
-
-.reseau-item:hover .icon-circle img {
-    filter: invert(1); /* Rend l'icône blanche/beige au survol */
-}
-
-.reseau-item:hover a {
-    border-bottom: 1px solid var(--beige);
-    color: var(--beige);
-}
-
-/* Adaptation Mobile */
-@media (max-width: 768px) {
-    .reseaux-flex {
-        flex-direction: column;
-        gap: 50px;
-    }
-}
-/* --- STYLE DE LA LIGHTBOX (VUE AGRANDIE) --- */
+/* --- LIGHTBOX --- */
 .lightbox {
-    display: none; /* Caché par défaut */
-    position: fixed;
-    z-index: 2000;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-color: rgba(0, 0, 0, 0.9); /* Fond noir transparent */
-    justify-content: center;
-    align-items: center;
+    display: none; position: fixed; z-index: 2000;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center; align-items: center;
 }
-
 .lightbox-content {
-    max-width: 90%;
-    max-height: 80%;
+    max-width: 90%; max-height: 80%;
     box-shadow: 0 0 30px rgba(0,0,0,0.5);
-    border: 5px solid var(--beige);
-    animation: zoomIn 0.3s ease;
+    border: 5px solid var(--beige); animation: zoomIn 0.3s ease;
 }
-
 .close-lightbox {
-    position: absolute;
-    top: 30px;
-    right: 50px;
-    color: var(--beige);
-    font-size: 50px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
+    position: absolute; top: 30px; right: 50px;
+    color: var(--beige); font-size: 50px;
+    font-weight: bold; cursor: pointer; transition: 0.3s;
 }
-
-.close-lightbox:hover {
-    color: var(--blanc);
-    transform: scale(1.2);
-}
-
+.close-lightbox:hover { color: var(--blanc); transform: scale(1.2); }
 @keyframes zoomIn {
     from { transform: scale(0.7); opacity: 0; }
     to { transform: scale(1); opacity: 1; }
 }
-/* --- ADAPTATION POUR MOBILE ET TABLETTE --- */
+
+/* --- MOBILE & RESPONSIVE --- */
+@media (max-width: 992px) {
+    .container { width: 90%; }
+    #hero h1 { font-size: 5rem; }
+}
+
 @media (max-width: 768px) {
-    
-    /* Hero Section : On réduit la taille du texte */
-    #hero h1 {
-        font-size: 3.5rem;
-        padding: 10px 20px;
+    #hero h1 { font-size: 3.5rem; padding: 10px 20px; }
+    .container { width: 92%; padding: 60px 0; }
+    #projet .grid, .president-flex, .activities-grid, .reseaux-flex {
+        grid-template-columns: 1fr; gap: 40px; text-align: left;
     }
-
-    /* Conteneurs : On réduit les marges sur les côtés */
-    .container {
-        width: 92%;
-        padding: 60px 0;
-    }
-
-    /* Grille Projet : On passe de 2 colonnes à 1 colonne */
-    #projet .grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        text-align: left; /* Plus lisible sur mobile */
-    }
-
-    /* Mot du Président : Image au-dessus du texte */
-    .president-flex {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .president-img img {
-        height: 400px; /* Plus court pour ne pas prendre tout l'écran */
-        box-shadow: 15px 15px 0px var(--beige);
-    }
-
-    /* Activités : 1 seule colonne */
-    .activities-grid {
-        grid-template-columns: 1fr;
-    }
-
-    /* Galerie : On passe à 2 colonnes pour voir les photos plus grandes */
+    .president-img img { height: 400px; box-shadow: 15px 15px 0px var(--beige); }
     .photo-gallery {
-        grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: 250px;
-        gap: 8px;
+        grid-template-columns: repeat(2, 1fr); grid-auto-rows: 250px; gap: 8px;
     }
-
-    /* Navigation : On simplifie le menu */
-    nav {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    nav ul {
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    /* Partenaires : Plus petits sur mobile */
-    .partners-grid {
-        gap: 30px;
-    }
-
-    .partner-item {
-        width: 120px;
-    }
+    nav { flex-direction: column; gap: 20px; }
+    nav ul { gap: 15px; flex-wrap: wrap; justify-content: center; }
+    .partners-grid { gap: 30px; }
+    .partner-item { width: 120px; }
 }
