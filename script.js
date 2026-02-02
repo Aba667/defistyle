@@ -1,40 +1,82 @@
 /**
  * PROJET DÉFI'STYLE - SCRIPT COMPLET
- * Fonctionnalités : Galerie dynamique, Lightbox (Zoom) et Sécurité renforcée
+ * Fonctionnalités : Double Galerie (Metz/Lyon), Load More, Lightbox, Sécurité
  */
 
 document.addEventListener("DOMContentLoaded", function() {
     
-    // --- 1. CONFIGURATION DE LA GALERIE ET DE LA LIGHTBOX ---
-    const galleryGrid = document.getElementById('gallery-grid');
+    // --- VARIABLES GLOBALES LIGHTBOX ---
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const closeBtn = document.querySelector('.close-lightbox');
 
-    if (galleryGrid) {
-        // Boucle pour générer les 50 photos (def1 à def50)
-        for (let i = 1; i <= 47; i++) {
+    // --- FONCTION GÉNÉRATRICE DE GALERIE ---
+    // Cette fonction crée les images, gère le "Voir plus" et le clic Lightbox
+    function createGallery(containerId, buttonId, prefix, start, end, extension, usePadding) {
+        const container = document.getElementById(containerId);
+        const button = document.getElementById(buttonId);
+
+        if (!container) return;
+
+        for (let i = start; i <= end; i++) {
             const img = document.createElement('img');
-            img.src = `photo/def${i}.jpg`; 
-            img.alt = `Défilé Défi'style - Création ${i}`;
-            img.loading = "lazy"; // Optimisation des performances
-            img.style.cursor = "zoom-in";
             
-            // Sécurité : Empêche le glisser-déposer de l'image
+            // Gestion du nom de fichier
+            let fileName;
+            if (usePadding) {
+                // Pour Lyon : Transforme 1 en "00001", 15 en "00015", etc.
+                let paddedNumber = String(i).padStart(5, '0'); 
+                fileName = `${prefix}${paddedNumber}.${extension}`;
+            } else {
+                // Pour Metz : def1, def2...
+                fileName = `${prefix}${i}.${extension}`;
+            }
+
+            // Chemin des images (conforme à votre demande ../photo/)
+            img.src = `../photo/${fileName}`; 
+            img.alt = `Défi'style - Photo ${i}`;
+            img.loading = "lazy";
+            img.style.cursor = "zoom-in";
             img.setAttribute('draggable', 'false');
 
-            // Événement pour ouvrir la photo en grand (Lightbox)
+            // Si l'index est supérieur à 5 (donc la 6ème photo), on cache l'image
+            if (i > 5) { 
+                img.classList.add('hidden-photo');
+            }
+
+            // Ouverture Lightbox au clic
             img.addEventListener('click', () => {
                 lightbox.style.display = "flex";
                 lightboxImg.src = img.src;
-                document.body.style.overflow = "hidden"; // Bloque le scroll derrière
+                document.body.style.overflow = "hidden";
             });
 
-            galleryGrid.appendChild(img);
+            container.appendChild(img);
+        }
+
+        // Gestion du bouton "Afficher les autres photos"
+        if (button) {
+            button.addEventListener('click', function() {
+                const hiddenImages = container.querySelectorAll('.hidden-photo');
+                hiddenImages.forEach(image => {
+                    image.classList.remove('hidden-photo'); 
+                    image.style.animation = "fadeIn 0.5s ease-in";
+                });
+                button.style.display = 'none'; // Cache le bouton après clic
+            });
         }
     }
 
-    // --- 2. FERMETURE DE LA LIGHTBOX ---
+    // --- 1. GÉNÉRATION DES DEUX GALERIES ---
+
+    // GALERIE 1 : METZ (def1.jpg à def47.jpg)
+    createGallery('gallery-metz', 'btn-metz', 'def', 1, 47, 'jpg', false);
+
+    // GALERIE 2 : LYON (image00001.jpeg à image00175.jpeg)
+    createGallery('gallery-lyon', 'btn-lyon', 'image', 1, 175, 'jpeg', true);
+
+
+    // --- 2. GESTION FERMETURE LIGHTBOX ---
     if (closeBtn) {
         closeBtn.addEventListener('click', () => {
             lightbox.style.display = "none";
@@ -42,43 +84,44 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // Fermer si on clique sur le fond noir de la lightbox
-    lightbox.addEventListener('click', (e) => {
-        if (e.target !== lightboxImg) {
-            lightbox.style.display = "none";
-            document.body.style.overflow = "auto";
-        }
-    });
+    if (lightbox) {
+        lightbox.addEventListener('click', (e) => {
+            if (e.target !== lightboxImg) {
+                lightbox.style.display = "none";
+                document.body.style.overflow = "auto";
+            }
+        });
+    }
 
-    // --- 3. SÉCURITÉ : PROTECTION DES CRÉATIONS ---
+    // --- 3. SÉCURITÉ ---
+    // Bloquer clic droit
+    document.addEventListener('contextmenu', e => e.preventDefault(), false);
     
-    // Blocage du clic droit (Menu contextuel)
-    document.addEventListener('contextmenu', function(e) {
-        e.preventDefault();
-    }, false);
-
-    // Blocage des touches d'inspection et raccourcis de copie
+    // Bloquer raccourcis clavier (F12, Inspecter...)
     document.onkeydown = function(e) {
-        // F12 (Inspecteur)
         if (e.keyCode == 123) return false;
-        
-        // Ctrl+Shift+I (Inspecter), Ctrl+Shift+J (Console), Ctrl+U (Code source)
         if (e.ctrlKey && (e.shiftKey || e.keyCode == 'U'.charCodeAt(0))) {
             if (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0) || e.keyCode == 'U'.charCodeAt(0)) {
                 return false;
             }
         }
-        
-        // Ctrl+S (Enregistrer sous)
-        if (e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)) return false;
     };
 
-    // Protection contre la sélection de texte par double-clic
+    // Bloquer double-clic
     document.addEventListener('mousedown', function (e) {
-        if (e.detail > 1) {
-            e.preventDefault();
-        }
+        if (e.detail > 1) e.preventDefault();
     }, false);
 
-    console.log("Système Défi'style activé : Galerie, Zoom et Sécurité opérationnels.");
+    console.log("Système Défi'style activé.");
+
 });
+
+// Animation douce en JS pour éviter de polluer le CSS
+const style = document.createElement('style');
+style.innerHTML = `
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+`;
+document.head.appendChild(style);
