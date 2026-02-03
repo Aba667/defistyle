@@ -32,8 +32,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 fileName = `${prefix}${i}.${extension}`;
             }
 
-            // Chemin des images (conforme à votre demande ../photo/)
-            img.src = `../photo/${fileName}`; 
+            // Chemin des images (conforme à votre demande photo/)
+            img.src = `photo/${fileName}`; 
             img.alt = `Défi'style - Photo ${i}`;
             img.loading = "lazy";
             img.style.cursor = "zoom-in";
