@@ -1,6 +1,6 @@
 /**
- * PROJET DÉFI'STYLE - SCRIPT COMPLET
- * Fonctionnalités : Double Galerie (Metz/Lyon), Load More, Lightbox, Sécurité
+ * PROJET DÉFI'STYLE - SCRIPT FINAL CORRIGÉ
+ * Chemin photos : "photo/" (au même niveau que l'index)
  */
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const closeBtn = document.querySelector('.close-lightbox');
 
     // --- FONCTION GÉNÉRATRICE DE GALERIE ---
-    // Cette fonction crée les images, gère le "Voir plus" et le clic Lightbox
     function createGallery(containerId, buttonId, prefix, start, end, extension, usePadding) {
         const container = document.getElementById(containerId);
         const button = document.getElementById(buttonId);
@@ -24,27 +23,28 @@ document.addEventListener("DOMContentLoaded", function() {
             // Gestion du nom de fichier
             let fileName;
             if (usePadding) {
-                // Pour Lyon : Transforme 1 en "00001", 15 en "00015", etc.
+                // Pour Lyon : 1 devient "00001"
                 let paddedNumber = String(i).padStart(5, '0'); 
                 fileName = `${prefix}${paddedNumber}.${extension}`;
             } else {
-                // Pour Metz : def1, def2...
+                // Pour Metz : 1 reste "1"
                 fileName = `${prefix}${i}.${extension}`;
             }
 
-            // Chemin des images (conforme à votre demande photo/)
+            // --- CORRECTION ICI : "photo/" au lieu de "../photo/" ---
             img.src = `photo/${fileName}`; 
+            
             img.alt = `Défi'style - Photo ${i}`;
             img.loading = "lazy";
             img.style.cursor = "zoom-in";
             img.setAttribute('draggable', 'false');
 
-            // Si l'index est supérieur à 5 (donc la 6ème photo), on cache l'image
+            // On cache les photos après la 5ème
             if (i > 5) { 
                 img.classList.add('hidden-photo');
             }
 
-            // Ouverture Lightbox au clic
+            // Lightbox (Zoom)
             img.addEventListener('click', () => {
                 lightbox.style.display = "flex";
                 lightboxImg.src = img.src;
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
             container.appendChild(img);
         }
 
-        // Gestion du bouton "Afficher les autres photos"
+        // Bouton "Afficher les autres photos"
         if (button) {
             button.addEventListener('click', function() {
                 const hiddenImages = container.querySelectorAll('.hidden-photo');
@@ -62,21 +62,21 @@ document.addEventListener("DOMContentLoaded", function() {
                     image.classList.remove('hidden-photo'); 
                     image.style.animation = "fadeIn 0.5s ease-in";
                 });
-                button.style.display = 'none'; // Cache le bouton après clic
+                button.style.display = 'none';
             });
         }
     }
 
-    // --- 1. GÉNÉRATION DES DEUX GALERIES ---
+    // --- 1. GÉNÉRATION DES GALERIES ---
 
-    // GALERIE 1 : METZ (def1.jpg à def47.jpg)
-    createGallery('gallery-metz', 'btn-metz', 'def', 1, 47, 'jpg', false);
-
-    // GALERIE 2 : LYON (image00001.jpeg à image00175.jpeg)
+    // GALERIE 1 : LYON (Mise en avant) - image00001.jpeg à image00175.jpeg
     createGallery('gallery-lyon', 'btn-lyon', 'image', 1, 175, 'jpeg', true);
 
+    // GALERIE 2 : METZ - def1.jpg à def47.jpg
+    createGallery('gallery-metz', 'btn-metz', 'def', 1, 47, 'jpg', false);
 
-    // --- 2. GESTION FERMETURE LIGHTBOX ---
+
+    // --- 2. FERMETURE LIGHTBOX ---
     if (closeBtn) {
         closeBtn.addEventListener('click', () => {
             lightbox.style.display = "none";
@@ -94,10 +94,8 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // --- 3. SÉCURITÉ ---
-    // Bloquer clic droit
     document.addEventListener('contextmenu', e => e.preventDefault(), false);
     
-    // Bloquer raccourcis clavier (F12, Inspecter...)
     document.onkeydown = function(e) {
         if (e.keyCode == 123) return false;
         if (e.ctrlKey && (e.shiftKey || e.keyCode == 'U'.charCodeAt(0))) {
@@ -107,16 +105,13 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     };
 
-    // Bloquer double-clic
     document.addEventListener('mousedown', function (e) {
         if (e.detail > 1) e.preventDefault();
     }, false);
 
-    console.log("Système Défi'style activé.");
-
 });
 
-// Animation douce en JS pour éviter de polluer le CSS
+// Animation CSS injectée
 const style = document.createElement('style');
 style.innerHTML = `
     @keyframes fadeIn {
