@@ -193,6 +193,90 @@ h2 {
     background-color: var(--beige); border-color: var(--beige); color: var(--white);
 }
 
+/* --- ÉVÉNEMENTS À VENIR --- */
+.agenda-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.event-card {
+    display: flex;
+    align-items: stretch;
+    border: 1px solid #eee;
+    background: var(--blanc);
+    transition: var(--transition);
+}
+
+.event-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    border-color: var(--beige);
+}
+
+.event-date {
+    flex: 0 0 110px;
+    background: var(--noir);
+    color: var(--beige);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px 10px;
+}
+
+.event-day {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 2.4rem;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.event-month {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.75rem;
+    margin-top: 8px;
+}
+
+.event-info { padding: 30px; }
+
+.event-info h3 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+}
+
+.event-place {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #888;
+    margin-bottom: 18px;
+}
+
+.event-info p { font-size: 0.95rem; color: #444; }
+
+.event-link {
+    display: inline-block;
+    margin-top: 18px;
+    text-decoration: none;
+    color: var(--noir);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    border-bottom: 2px solid var(--beige);
+    padding-bottom: 4px;
+    transition: var(--transition);
+}
+
+.event-link:hover { color: var(--beige); border-color: var(--noir); }
+
 /* --- PARTENAIRES --- */
 #partenaires { background-color: var(--beige); }
 

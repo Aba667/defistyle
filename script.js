@@ -69,6 +69,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // --- 1. GÉNÉRATION DES GALERIES ---
 
+    // GALERIE : DRESS TO IMPRESS « Le Diable s'habille en Prada » (29 avril 2026, Lyon) - dti1.jpg à dti107.jpg
+    createGallery('gallery-prada', 'btn-prada', 'dti', 1, 107, 'jpg', false);
+
+    // GALERIE : SOIRÉE RÉTRO 70-80 (20 mars 2026, Lyon) - retro1.jpg à retro34.jpg
+    createGallery('gallery-retro', 'btn-retro', 'retro', 1, 34, 'jpg', false);
+
     // GALERIE 1 : LYON (Mise en avant) - image00001.jpeg à image00175.jpeg
     createGallery('gallery-lyon', 'btn-lyon', 'image', 1, 175, 'jpeg', true);
 
