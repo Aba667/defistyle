@@ -193,6 +193,25 @@ h2 {
     background-color: var(--beige); border-color: var(--beige); color: var(--white);
 }
 
+.drive-link-wrap { margin-top: 20px; }
+
+.btn-drive {
+    display: inline-block;
+    background-color: var(--beige);
+    border: 1px solid var(--beige);
+    color: var(--noir);
+    text-decoration: none;
+    padding: 15px 30px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase; letter-spacing: 2px;
+    font-size: 0.8rem; font-weight: 700;
+    cursor: pointer; transition: var(--transition);
+}
+
+.btn-drive:hover {
+    background-color: var(--noir); border-color: var(--noir); color: var(--beige);
+}
+
 /* --- ÉVÉNEMENTS À VENIR --- */
 .agenda-grid {
     display: grid;
