@@ -278,7 +278,29 @@ h2 {
     margin-bottom: 18px;
 }
 
-.event-info p { font-size: 0.95rem; color: #444; }
+.event-info p { font-size: 0.95rem; color: #444; margin-bottom: 8px; }
+
+.event-poster-container {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.event-poster {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.event-details-list {
+    margin: 15px 0 20px 20px;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+.event-details-list li {
+    margin-bottom: 8px;
+}
 
 .event-link {
     display: inline-block;
