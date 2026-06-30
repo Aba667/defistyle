@@ -91,28 +91,38 @@
         <h2>Événements à venir</h2>
         <div class="agenda-grid">
             <div class="event-card">
-                <div class="event-date">
-                    <span class="event-day">11</span>
-                    <span class="event-month">Juillet</span>
-                </div>
-                <div class="event-info">
-                    <h3>LYON FASHION DAY</h3>
-                    <p class="event-place">Maison des Étudiants, 90 rue de Marseille, 69007 Lyon</p>
-                    <p><strong>Heure :</strong> De 18H à 22H</p>
-                    <p>Rejoignez-nous pour une soirée placée sous le signe de la créativité, de l'élégance et du partage.</p>
-                    <div class="event-poster-container">
-                        <img src="photo/DD0F80E7-BEC9-481D-BDDC-4D12E778A45A.png" alt="Affiche Lyon Fashion Day" class="event-poster">
-                    </div>
-                    <ul class="event-details-list">
-                        <li>Accueil des invités</li>
-                        <li>Présentation des partenaires</li>
-                        <li>Défilé</li>
-                        <li>Cocktail et Séance photo</li>
-                    </ul>
-                    <p><strong>Entrée gratuite</strong> sur invitation et inscription.<br><em>Tenue correcte exigée.</em></p>
-                    <a class="event-link" href="https://instagram.com/defi_style25" target="_blank">Plus d'infos sur @defi_style25 &rarr;</a>
-                </div>
-            </div>
+    <div class="event-date">
+        <span class="event-day">11</span>
+        <span class="event-month">Juillet</span>
+    </div>
+    
+    <div class="event-info">
+        <!-- 1. BLOC GAUCHE : TOUT LE TEXTE -->
+        <div class="event-text-content">
+            <h3>LYON FASHION DAY</h3>
+            <p class="event-place">Maison des Étudiants, 90 rue de Marseille, 69007 Lyon</p>
+            <p><strong>Heure :</strong> De 18H à 22H</p>
+            <p>Rejoignez-nous pour une soirée placée sous le signe de la créativité, de l'élégance et du partage.</p>
+            
+            <ul class="event-details-list">
+                <li>Accueil des invités</li>
+                <li>Présentation des partenaires</li>
+                <li>Défilé</li>
+                <li>Cocktail et Séance photo</li>
+            </ul>
+            <p><strong>Entrée gratuite</strong> sur invitation et inscription.<br><em>Tenue correcte exigée.</em></p>
+            <a class="event-link" href="https://instagram.com/defi_style25" target="_blank">Plus d'infos sur @defi_style25 &rarr;</a>
+        </div>
+
+        <!-- 2. BLOC DROITE : L'AFFICHE CLIQUABLE -->
+        <div class="event-poster-container">
+            <img src="photo/DD0F80E7-BEC9-481D-BDDC-4D12E778A45A.png" 
+                 alt="Affiche Lyon Fashion Day" 
+                 class="event-poster"
+                 onclick="document.getElementById('lightbox').style.display='flex'; document.getElementById('lightbox-img').src=this.src; document.body.style.overflow='hidden';">
+        </div>
+    </div>
+</div>
         </div>
     </section>
 

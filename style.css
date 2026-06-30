@@ -217,7 +217,7 @@ h2 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 40px;
-    max-width: 800px;
+    max-width: 900px; /* Légèrement élargi pour accommoder les deux colonnes */
     margin: 0 auto;
 }
 
@@ -261,35 +261,64 @@ h2 {
     margin-top: 8px;
 }
 
-.event-info { padding: 30px; }
+.event-info { 
+    padding: 30px;
+    display: flex;
+    align-items: center; /* Centre l'image et le texte verticalement */
+    gap: 30px; /* Espace chic entre le texte et l'affiche */
+}
+
+.event-text-content {
+    flex: 1;
+    font-family: 'Montserrat', sans-serif; /* Police globale du site */
+    color: var(--noir);
+}
 
 .event-info h3 {
-    font-family: 'Bodoni Moda', serif;
-    font-size: 1.4rem;
-    margin-bottom: 8px;
+    font-family: 'Bodoni Moda', serif; /* Police Haute Couture pour le titre */
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+    color: var(--noir);
+    text-transform: uppercase;
 }
 
 .event-place {
+    font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     font-weight: 700;
     color: #888;
     margin-bottom: 18px;
 }
 
-.event-info p { font-size: 0.95rem; color: #444; margin-bottom: 8px; }
+.event-info p { 
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem; 
+    color: #444; 
+    margin-bottom: 12px; 
+    line-height: 1.8; /* Même espacement aéré que le reste du site */
+}
 
+/* Contrôle strict de la taille de l'affiche */
 .event-poster-container {
-    margin: 20px 0;
+    flex: 0 0 250px; 
     text-align: center;
 }
 
 .event-poster {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15); 
+    object-fit: cover;
+    transition: var(--transition);
+    cursor: zoom-in; /* Change le curseur en petite loupe pour indiquer que c'est cliquable */
+}
+
+.event-poster:hover {
+    transform: scale(1.03); 
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2); /* L'ombre s'agrandit au survol */
 }
 
 .event-details-list {
@@ -414,4 +443,23 @@ footer p { color: var(--beige); font-size: 12px; letter-spacing: 2px; }
     nav ul { gap: 15px; flex-wrap: wrap; justify-content: center; }
     .partners-grid { gap: 30px; }
     .partner-item { width: 120px; }
+    .event-info {
+        flex-direction: column-reverse; /* Place l'affiche au-dessus du texte sur mobile */
+        text-align: center;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .event-poster-container {
+        flex: none;
+        width: 100%;
+        max-width: 300px; /* Limite la taille même sur mobile */
+        margin: 0 auto;
+    }
+    
+    .event-details-list {
+        text-align: left; /* Garde la liste lisible */
+        margin-left: 0;
+        display: inline-block;
+    }
 }
