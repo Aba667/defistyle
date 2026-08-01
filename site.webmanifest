@@ -1,0 +1,15 @@
+{
+  "name": "Défi'style — La révérence de la mode",
+  "short_name": "Défi'style",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f4ef",
+  "theme_color": "#161616",
+  "icons": [
+    {
+      "src": "photo/logo.jpeg",
+      "sizes": "590x590",
+      "type": "image/jpeg"
+    }
+  ]
+}
