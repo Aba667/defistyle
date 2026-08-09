@@ -1,7 +1,7 @@
 /*
  * CONTENU ÉDITABLE DÉFI'STYLE
  *
- * Les prochains événements et les photos Lyon Fashion Day se gèrent ici,
+ * Les prochains événements et les photos des rendez-vous se gèrent ici,
  * sans modifier le HTML principal.
  */
 window.DEFISTYLE_CONTENT = {
@@ -19,7 +19,7 @@ window.DEFISTYLE_CONTENT = {
     //     label: 'Événement / Défilé',
     //     title: 'Nom de l’événement',
     //     description: 'Une courte présentation du rendez-vous.',
-    //     tags: ['Lyon', 'Entrée sur inscription'],
+    //     tags: ['Paris', 'Entrée sur inscription'],
     //     href: '#participer'
     // }
     upcomingEvents: [],
