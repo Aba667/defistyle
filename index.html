@@ -1,5 +1,4 @@
 <!doctype html>
-<!-- Défi'style — page de pause active -->
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -26,6 +25,7 @@
 
     <link rel="icon" type="image/jpeg" href="photo/logo.jpeg">
     <link rel="apple-touch-icon" href="photo/logo.jpeg">
+    <link rel="manifest" href="site.webmanifest">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -231,36 +231,203 @@
                     <span class="instagram-feature-copy"><small>Au quotidien</small><strong>Suivre <span data-instagram-handle>@defi_style25</span></strong></span>
                     <span class="instagram-feature-arrow" aria-hidden="true">↗</span>
                 </a>
-                <p class="pause-status"><span aria-hidden="true"></span> En préparation</p>
-            </header>
-
-            <div class="pause-copy">
-                <p class="eyebrow">Metz — Lyon — Paris</p>
-                <h1 id="pause-title">Défi'style<br><em>revient bientôt.</em></h1>
-                <p class="pause-intro">Nous prenons un peu de temps pour préparer la suite. Les événements, les images et les histoires de Défi'style seront de retour très bientôt.</p>
-                <p class="pause-thanks">Merci de votre patience.</p>
-
-                <div class="pause-links" aria-label="Nous contacter">
-                    <a href="mailto:defistyle2025@gmail.com">Nous écrire <span aria-hidden="true">↗</span></a>
-                    <a href="https://instagram.com/defi_style25" target="_blank" rel="noreferrer">Instagram <span aria-hidden="true">↗</span></a>
-                </div>
             </div>
-
-            <footer class="pause-footer">
-                <p>Défi'style — Metz · Lyon · Paris</p>
-                <p>© 2026</p>
-            </footer>
         </section>
 
-        <aside class="pause-visual" aria-label="Défi'style, en préparation">
-            <picture>
-                <source type="image/webp" srcset="photo/web/dti1-640.webp 640w, photo/web/dti1-1280.webp 1280w" sizes="(max-width: 820px) 100vw, 48vw">
-                <img src="photo/dti1.jpg" alt="Portrait lors d'un événement Défi'style" width="1280" height="1600">
-            </picture>
-            <div class="pause-visual-overlay" aria-hidden="true"></div>
-            <p class="pause-visual-caption">La suite s'écrit en coulisses <span aria-hidden="true">✳</span></p>
-            <div class="pause-monogram" aria-hidden="true">D</div>
-        </aside>
+        <section class="section agenda-section" id="agenda" aria-labelledby="agenda-title">
+            <div class="shell">
+                <div class="section-topline section-topline-light">
+                    <p class="eyebrow">04 — L'agenda</p>
+                    <p class="section-index">Les prochains chapitres</p>
+                </div>
+                <div class="section-heading agenda-heading">
+                    <h2 id="agenda-title">À venir,<br><em>sur le podium.</em></h2>
+                    <p>Les prochains rendez-vous seront annoncés ici dès que toutes les informations seront confirmées.</p>
+                </div>
+
+                <div class="event-list" data-upcoming-events aria-live="polite"></div>
+
+                <div class="agenda-signup">
+                    <div>
+                        <p class="eyebrow">Ne rien manquer</p>
+                        <h3>Recevoir les<br><em>prochains rendez-vous.</em></h3>
+                    </div>
+                    <form class="signup-form" data-mail-form="newsletter" novalidate>
+                        <label for="newsletter-email">Votre adresse email</label>
+                        <div class="signup-row">
+                            <input id="newsletter-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="vous@exemple.fr" required>
+                            <button class="button button-light" type="submit">S'inscrire <span aria-hidden="true">↗</span></button>
+                        </div>
+                        <p class="form-status" aria-live="polite"></p>
+                        <p class="form-note">Votre demande ouvre un message prêt à envoyer à l'équipe Défi'style.</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="section archive-feature-section" id="archives" aria-labelledby="archives-title">
+            <div class="shell">
+                <div class="section-topline">
+                    <p class="eyebrow">05 — Dernier rendez-vous</p>
+                    <p class="section-index">Lyon, 11.07.2026</p>
+                </div>
+                <div class="archive-feature">
+                    <div class="archive-poster">
+                        <img src="photo/DD0F80E7-BEC9-481D-BDDC-4D12E778A45A.png" alt="Affiche du Lyon Fashion Day du 11 juillet 2026" width="1254" height="1254" loading="lazy">
+                        <span class="poster-stamp">Édition<br>passée</span>
+                    </div>
+                    <div class="archive-copy">
+                        <p class="eyebrow">Lyon Fashion Day</p>
+                        <h2 id="archives-title">Le show est passé.<br><em>Les images arrivent.</em></h2>
+                        <p>Le 11 juillet 2026, Défi'style a réuni créateurs, invités et passionnés à la Maison des Étudiants de Lyon. La galerie photo sera publiée ici dès réception de la sélection.</p>
+                        <div class="archive-facts"><span>18h — 22h</span><span>Maison des Étudiants</span><span>Lyon 07</span></div>
+                        <p class="archive-note"><span aria-hidden="true">✳</span> Tu as les photos de l'événement ? Envoie-les-nous pour compléter cette archive.</p>
+                        <a class="button button-dark" href="mailto:defistyle2025@gmail.com?subject=Photos%20Lyon%20Fashion%20Day">Envoyer les photos <span aria-hidden="true">↗</span></a>
+                    </div>
+                </div>
+
+                <div class="lyon-photo-update" id="lyon-fashion-day-update" hidden>
+                    <div class="gallery-header">
+                        <div><p class="gallery-kicker">Nouvelle galerie</p><h3>Lyon Fashion Day — les images de l'édition</h3></div>
+                        <p>11.07.2026 <span aria-hidden="true">/</span> Lyon</p>
+                    </div>
+                    <div class="photo-gallery" id="gallery-lyon-fashion-day" aria-live="polite"></div>
+                    <div class="btn-container"><button id="btn-lyon-fashion-day" class="button button-outline" type="button">Voir la série <span aria-hidden="true">↗</span></button></div>
+                </div>
+
+                <div class="archive-heading">
+                    <div>
+                        <p class="eyebrow">Archives visuelles</p>
+                        <h2>Les rendez-vous<br><em>en images.</em></h2>
+                    </div>
+                    <p>Ces galeries gardent les coulisses, les looks et les rencontres de chaque rendez-vous. Les images de Lyon Fashion Day viendront compléter l'ensemble.</p>
+                </div>
+
+                <div class="gallery-section">
+                    <div class="gallery-header">
+                        <div><p class="gallery-kicker">Série 01</p><h3>Dress to Impress — « Le Diable s'habille en Prada »</h3></div>
+                        <p>29.04.2026 <span aria-hidden="true">/</span> Lyon</p>
+                    </div>
+                    <div class="photo-gallery" id="gallery-prada" aria-live="polite"></div>
+                    <div class="btn-container"><button id="btn-prada" class="button button-outline" type="button">Voir la série <span aria-hidden="true">↗</span></button></div>
+                </div>
+
+                <div class="gallery-section">
+                    <div class="gallery-header">
+                        <div><p class="gallery-kicker">Série 02</p><h3>Soirée rétro — années 70–80</h3></div>
+                        <p>20.03.2026 <span aria-hidden="true">/</span> Lyon</p>
+                    </div>
+                    <div class="photo-gallery" id="gallery-retro" aria-live="polite"></div>
+                    <div class="btn-container"><button id="btn-retro" class="button button-outline" type="button">Voir la série <span aria-hidden="true">↗</span></button></div>
+                </div>
+
+                <div class="gallery-section">
+                    <div class="gallery-header">
+                        <div><p class="gallery-kicker">Série 03</p><h3>Dress to Impress — silhouettes lyonnaises</h3></div>
+                        <p>24.01.2026 <span aria-hidden="true">/</span> Lyon</p>
+                    </div>
+                    <div class="photo-gallery" id="gallery-lyon" aria-live="polite"></div>
+                    <div class="btn-container"><button id="btn-lyon" class="button button-outline" type="button">Voir la série <span aria-hidden="true">↗</span></button></div>
+                </div>
+
+                <div class="gallery-section">
+                    <div class="gallery-header">
+                        <div><p class="gallery-kicker">Série 04</p><h3>Lancement officiel Défi'style</h3></div>
+                        <p>30.08.2025 <span aria-hidden="true">/</span> Metz</p>
+                    </div>
+                    <div class="photo-gallery" id="gallery-metz" aria-live="polite"></div>
+                    <div class="btn-container"><button id="btn-metz" class="button button-outline" type="button">Voir la série <span aria-hidden="true">↗</span></button></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section partners-section" aria-labelledby="partenaires-title">
+            <div class="shell">
+                <div class="section-topline">
+                    <p class="eyebrow">06 — Avec nous</p>
+                    <p class="section-index">Un projet collectif</p>
+                </div>
+                <div class="section-heading compact-heading">
+                    <h2 id="partenaires-title">Ceux qui rendent<br><em>les événements possibles.</em></h2>
+                    <p>Merci aux structures, lieux et collectifs qui rendent chaque rendez-vous possible.</p>
+                </div>
+                <div class="partners-grid">
+                    <div class="partner-item"><img src="photo/p1.png" alt="Ville de Metz" width="120" height="120" loading="lazy"><span>Ville de Metz</span></div>
+                    <div class="partner-item"><img src="photo/p2.png" alt="Le Cap — Maison des étudiants" width="120" height="120" loading="lazy"><span>Le Cap</span></div>
+                    <div class="partner-item"><img src="photo/p3.png" alt="Maison des étudiants" width="120" height="120" loading="lazy"><span>Maison des étudiants</span></div>
+                    <div class="partner-item"><img src="photo/p4.png" alt="Association des Sénégalais de la Moselle" width="120" height="120" loading="lazy"><span>ASM</span></div>
+                    <div class="partner-item"><img src="photo/p5.png" alt="Association des étudiants sénégalais de Metz" width="120" height="120" loading="lazy"><span>Étudiants sénégalais Metz</span></div>
+                    <div class="partner-item"><img src="photo/p6.png" alt="Collectif des étudiants sénégalais de Lyon" width="120" height="120" loading="lazy"><span>Étudiants sénégalais Lyon</span></div>
+                    <div class="partner-item"><img src="photo/p7.png" alt="Too Graphiste" width="120" height="120" loading="lazy"><span>Too Graphiste</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section participation-section" id="participer" aria-labelledby="participer-title">
+            <div class="shell">
+                <div class="section-topline">
+                    <p class="eyebrow">07 — Participer</p>
+                    <p class="section-index">Faire partie du mouvement</p>
+                </div>
+                <div class="section-heading participation-heading">
+                    <h2 id="participer-title">Envie de prendre<br><em>part à l'aventure&nbsp;?</em></h2>
+                    <p>Tu veux défiler, proposer un projet ou nous aider à préparer un événement ? Dis-nous simplement ce que tu aimerais faire.</p>
+                </div>
+
+                <div class="participation-grid">
+                    <a class="participation-card" href="#contact-form" data-participation-type="Créateur·rice ou modèle">
+                        <span>01</span><h3>Créer<br><em>& apparaître.</em></h3><p>Présente un univers, une silhouette ou une envie de participer à nos rendez-vous.</p><b>Je participe ↗</b>
+                    </a>
+                    <a class="participation-card" href="#contact-form" data-participation-type="Partenaire ou sponsor">
+                        <span>02</span><h3>Associer<br><em>son projet.</em></h3><p>Construisons une visibilité juste, créative et cohérente avec votre identité.</p><b>Je deviens partenaire ↗</b>
+                    </a>
+                    <a class="participation-card" href="#contact-form" data-participation-type="Photographe, styliste ou bénévole">
+                        <span>03</span><h3>Faire<br><em>équipe.</em></h3><p>Photographie, stylisme, beauté, accueil ou production : les coulisses ont aussi besoin de toi.</p><b>Je rejoins l'équipe ↗</b>
+                    </a>
+                </div>
+
+                <form class="application-form" id="contact-form" data-mail-form="participation" novalidate>
+                    <div class="form-grid">
+                        <label>Je suis
+                            <select id="contact-interest" name="interest" required>
+                                <option value="" selected disabled>Choisir une option</option>
+                                <option>Créateur·rice ou modèle</option>
+                                <option>Partenaire ou sponsor</option>
+                                <option>Photographe, styliste ou bénévole</option>
+                                <option>Autre demande</option>
+                            </select>
+                        </label>
+                        <label>Nom ou structure
+                            <input name="name" type="text" autocomplete="name" placeholder="Votre nom" required>
+                        </label>
+                        <label>Adresse email
+                            <input name="email" type="email" inputmode="email" autocomplete="email" placeholder="vous@exemple.fr" required>
+                        </label>
+                    </div>
+                    <label class="message-field">Votre idée
+                        <textarea name="message" rows="5" placeholder="Quelques mots sur votre projet, votre univers ou votre proposition…" required></textarea>
+                    </label>
+                    <div class="form-actions">
+                        <button class="button button-dark" type="submit">Envoyer ma demande <span aria-hidden="true">↗</span></button>
+                        <p class="form-status" aria-live="polite"></p>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="contact-section" id="contact" aria-labelledby="contact-title">
+            <div class="shell contact-grid">
+                <div>
+                    <p class="eyebrow">08 — Contact</p>
+                    <h2 id="contact-title">Une idée,<br><em>un look, un projet ?</em></h2>
+                </div>
+                <div class="contact-copy">
+                    <p>Créateurs, partenaires, modèles, photographes ou simples curieux : écris-nous. On te répondra avec plaisir.</p>
+                    <a class="contact-email" data-contact-email href="mailto:defistyle2025@gmail.com">defistyle2025@gmail.com <span aria-hidden="true">↗</span></a>
+                    <div class="contact-links"><a data-instagram-link href="https://instagram.com/defi_style25" target="_blank" rel="noreferrer">Instagram <span aria-hidden="true">↗</span></a><a href="press.html">Kit presse <span aria-hidden="true">↗</span></a><a href="#top">Retour en haut <span aria-hidden="true">↑</span></a></div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="site-footer">
