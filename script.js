@@ -256,7 +256,7 @@
 
         container.innerHTML = events.map((event, index) => {
             const tags = Array.isArray(event.tags) ? event.tags : [];
-            const href = event.href || '#participer';
+            const href = event.href || '#rejoindre';
             return `
                 <article class="event-card">
                     <div class="event-number">${String(index + 1).padStart(2, '0')}</div>
@@ -331,8 +331,6 @@
             if (select) select.value = card.dataset.participationType;
         });
     });
-
-    document.querySelector('[data-print-press]')?.addEventListener('click', () => window.print());
 
     // Lecture des articles : le contenu reste dans des templates HTML et n'est injecté qu'à la demande.
     const articleModal = document.querySelector('#article-modal');
