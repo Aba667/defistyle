@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="256" height="256" role="img" aria-label="Chapeau">
+    <title>Défi’style — Chapeau</title>
+    <path d="M16 5.2c-3.7 0-6 2.3-6.5 5.6L8.2 19.4h15.6l-1.3-8.6c-.5-3.3-2.8-5.6-6.5-5.6Z" fill="#161616"/>
+    <path d="M9 13.6h14l.55 3.6H8.45L9 13.6Z" fill="#a6404e"/>
+    <ellipse cx="16" cy="20.8" rx="13.6" ry="4" fill="#161616"/>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="256" height="256" role="img" aria-label="Instagram">
+    <title>Défi’style — Instagram</title>
+    <g fill="none" stroke="#161616" stroke-width="2.4">
+    <path d="M11 4.4h10a6.6 6.6 0 0 1 6.6 6.6v10a6.6 6.6 0 0 1-6.6 6.6H11a6.6 6.6 0 0 1-6.6-6.6V11A6.6 6.6 0 0 1 11 4.4Z"/>
+    <circle cx="16" cy="16" r="5.4"/>
+    </g>
+    <circle cx="23" cy="9" r="1.8" fill="#a6404e"/>
+</svg>

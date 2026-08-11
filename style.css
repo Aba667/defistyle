@@ -214,6 +214,8 @@ button {
 .button span,
 .card-arrow span,
 .story-link span,
+.text-link span,
+.section-link span,
 .contact-email span,
 .contact-links span {
     display: inline-block;
@@ -225,9 +227,20 @@ button {
 .button:hover span,
 .card-arrow:hover span,
 .story-link:hover span,
+.section-link:hover span,
 .contact-email:hover span,
 .contact-links a:hover span {
     transform: translate(3px, -3px);
+}
+
+/* Une flèche vers le bas ne part pas en diagonale : elle descend. */
+.text-link:hover span:has(.ds-i > [href$='-bas']),
+.contact-links a:hover span:has(.ds-i > [href$='-bas']) {
+    transform: translateY(3px);
+}
+
+.contact-links a:hover span:has(.ds-i > [href$='-haut']) {
+    transform: translateY(-3px);
 }
 
 .menu-toggle {
@@ -1345,11 +1358,10 @@ h3 em {
     list-style: none;
 }
 
-.event-tags li::before {
-    margin-right: 7px;
-    color: var(--accent);
-    content: '✳';
-    font-size: 8px;
+.event-tags li {
+    display: flex;
+    align-items: center;
+    gap: 7px;
 }
 
 .event-arrow {
@@ -2225,6 +2237,118 @@ h3 em {
 .close-lightbox:hover,
 .close-lightbox:focus-visible {
     color: var(--sand);
+}
+
+/* ────────────────────────────────────────────────────────────────
+   LES EMOJI DÉFI'STYLE — réglages par contexte
+   Le dessin vient de emoji/, les tailles génériques de emoji.css.
+   Ici on ne règle que ce qui dépend de l'endroit où l'emoji se pose.
+   ──────────────────────────────────────────────────────────────── */
+
+/* Posés seuls (pas dans une ligne de texte) : pas d'espace de descendante. */
+.hero-note-mark .ds-i,
+.instagram-feature-mark .ds-i,
+.instagram-feature-arrow .ds-i,
+.coming-soon-mark .ds-i,
+.archive-note > span .ds-i,
+.event-arrow .ds-i,
+.modal-close .ds-i,
+.close-lightbox .ds-i {
+    display: block;
+    vertical-align: baseline;
+}
+
+/* Les croix de fermeture : le × du clavier occupait moins de place
+   que sa taille de police, nos épingles sont recalées à la main. */
+.modal-close .ds-i {
+    width: 19px;
+    height: 19px;
+}
+
+.close-lightbox .ds-i {
+    width: 24px;
+    height: 24px;
+}
+
+/* Bandeau défilant : le texte est à 12 px, les emoji ont besoin de plus. */
+.marquee-track b .ds-i {
+    width: 19px;
+    height: 19px;
+    color: var(--paper);
+    vertical-align: -4px;
+}
+
+.milestone-list p .ds-i {
+    color: var(--accent);
+}
+
+.topline p .ds-i,
+.footer-top p .ds-i {
+    color: var(--sand);
+}
+
+/* Nos emoji ont deux tons : quand le texte autour est déjà bordeaux ou
+   sable, on repasse le corps du dessin en encre pour garder le contraste. */
+.hero-note-mark .ds-i,
+.archive-note > span .ds-i {
+    color: var(--ink);
+}
+
+/* Cartes « nous rejoindre » : numéro à gauche, emoji à droite. */
+.participation-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.participation-top span {
+    color: var(--accent);
+    font-family: var(--serif);
+    font-size: 20px;
+}
+
+.participation-top .ds-i {
+    transition: transform 250ms var(--ease);
+}
+
+.participation-card:hover .participation-top .ds-i,
+.participation-card:focus-visible .participation-top .ds-i {
+    transform: scale(1.12) rotate(-4deg);
+}
+
+/* Au survol la carte passe au noir : les emoji suivent. */
+.participation-card:hover,
+.participation-card:focus-visible {
+    --ds-accent: var(--sand);
+    --ds-soft: var(--sand-deep);
+    --ds-paper: var(--ink);
+}
+
+/* Les boutons pleins et la vignette Instagram sont déjà sombres. */
+.button-dark,
+.event-arrow:hover,
+.event-arrow:focus-visible,
+.button-outline:hover,
+.button-outline:focus-visible {
+    --ds-accent: var(--sand);
+    --ds-soft: var(--sand-deep);
+    --ds-paper: var(--ink);
+}
+
+/* …sauf quand ils repassent en bordeaux au survol. */
+.button-dark:hover,
+.button-dark:focus-visible {
+    --ds-soft: var(--paper);
+    --ds-paper: var(--accent);
+}
+
+.button-light,
+.button-light:hover,
+.button-light:focus-visible {
+    --ds-accent: var(--accent);
+    --ds-soft: var(--sand-deep);
+    --ds-paper: var(--paper);
 }
 
 @media (max-width: 1000px) {

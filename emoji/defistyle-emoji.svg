@@ -1,0 +1,252 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+<!--
+  ════════════════════════════════════════════════════════════════════
+  LES EMOJI DÉFI'STYLE — source unique
+  ════════════════════════════════════════════════════════════════════
+
+  Deux familles, une même géométrie (grille 32 × 32) :
+
+  · LES SIGNES  — traits fins, reprennent la couleur du texte autour
+                  (flèches-aiguilles, étoile, épingles, bouton).
+                  Ils remplacent les ↗ ↓ ↑ × · ✳ du clavier.
+
+  · LES EMOJI   — pictos mode en aplats, aux couleurs de la maison
+                  (cintre, robe, sac, chapeau, ciseaux, aiguille…).
+
+  Couleurs (identiques à style.css) :
+    encre      currentColor   hérite du texte → lisible sur clair ET sur foncé
+    bordeaux   --ds-accent    #a6404e
+    sable      --ds-soft      #ddccb4
+    papier     --ds-paper     #f7f4ef
+
+  ┌ MODIFIER UN EMOJI ────────────────────────────────────────────────┐
+  │ 1. éditer le <symbol> ici                                         │
+  │ 2. lancer  node emoji/generer-emoji.mjs                           │
+  │    → régénère les fichiers emoji/*.svg et recopie le jeu          │
+  │      dans index.html et site.html                                 │
+  └───────────────────────────────────────────────────────────────────┘
+-->
+<defs>
+
+  <!-- ─────────────  LES SIGNES  ───────────── -->
+
+  <!-- Flèche « aiguille » : le chas au départ, la pointe à l'arrivée. Remplace ↗ -->
+  <symbol id="ds-fleche" viewBox="0 0 32 32">
+    <g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="8.4" cy="23.6" r="2.5"/>
+      <path d="M10.5 21.5 23.4 8.6"/>
+      <path d="M15.6 8.6h7.8v7.8"/>
+    </g>
+  </symbol>
+
+  <!-- Remplace ↓ -->
+  <symbol id="ds-fleche-bas" viewBox="0 0 32 32">
+    <g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="16" cy="8.4" r="2.5"/>
+      <path d="M16 10.9v12.5"/>
+      <path d="M10.4 17.8 16 23.4l5.6-5.6"/>
+    </g>
+  </symbol>
+
+  <!-- Remplace ↑ -->
+  <symbol id="ds-fleche-haut" viewBox="0 0 32 32">
+    <g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="16" cy="23.6" r="2.5"/>
+      <path d="M16 21.1V8.6"/>
+      <path d="M10.4 14.2 16 8.6l5.6 5.6"/>
+    </g>
+  </symbol>
+
+  <!-- Deux épingles croisées. Remplace le × de fermeture -->
+  <symbol id="ds-epingles" viewBox="0 0 32 32">
+    <g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+      <path d="M9.6 9.6 23.4 23.4"/>
+      <path d="M22.4 9.6 8.6 23.4"/>
+    </g>
+    <circle cx="8.3" cy="8.3" r="2.7" fill="currentColor"/>
+    <circle cx="23.7" cy="8.3" r="2.7" fill="currentColor"/>
+  </symbol>
+
+  <!-- Bouton de couture. Remplace le · de séparation -->
+  <symbol id="ds-bouton" viewBox="0 0 32 32">
+    <circle cx="16" cy="16" r="9" fill="none" stroke="currentColor" stroke-width="2.8"/>
+    <circle cx="12.5" cy="16" r="2" fill="currentColor"/>
+    <circle cx="19.5" cy="16" r="2" fill="currentColor"/>
+  </symbol>
+
+  <!-- L'étoile Défi'style, version trait. Remplace ✳ -->
+  <symbol id="ds-etoile" viewBox="0 0 32 32">
+    <g fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round">
+      <path d="M16 5.2v21.6"/>
+      <path d="M6.65 10.6 25.35 21.4"/>
+      <path d="M6.65 21.4 25.35 10.6"/>
+    </g>
+  </symbol>
+
+  <!-- L'étoile en grand : six branches et un cœur de bouton bordeaux -->
+  <symbol id="ds-etoile-pleine" viewBox="0 0 32 32">
+    <g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round">
+      <path d="M16 4.4v23.2"/>
+      <path d="M5.95 10.2 26.05 21.8"/>
+      <path d="M5.95 21.8 26.05 10.2"/>
+    </g>
+    <circle cx="16" cy="16" r="4.8" fill="var(--ds-accent,#a6404e)"/>
+    <circle cx="16" cy="16" r="1.8" fill="var(--ds-paper,#f7f4ef)"/>
+  </symbol>
+
+  <!-- Étincelle -->
+  <symbol id="ds-etincelle" viewBox="0 0 32 32">
+    <path d="M16 3.4q1.3 11.3 12.6 12.6Q17.3 17.3 16 28.6 14.7 17.3 3.4 16 14.7 14.7 16 3.4Z" fill="var(--ds-accent,#a6404e)"/>
+  </symbol>
+
+
+  <!-- ─────────────  LES EMOJI MODE  ───────────── -->
+
+  <!-- Cintre -->
+  <symbol id="ds-cintre" viewBox="0 0 32 32">
+    <path d="M16 13.2v-2.6c0-1.5 1.1-2.2 2.2-2.6 1-.4 1.6-1 1.6-1.9 0-1.2-1-2.1-2.2-2.1-1.1 0-2 .7-2.2 1.7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M16 12.6 4.5 21.2c-1.8 1.3-.9 4.2 1.4 4.2h20.2c2.3 0 3.2-2.9 1.4-4.2L16 12.6Z" fill="var(--ds-accent,#a6404e)"/>
+  </symbol>
+
+  <!-- Robe -->
+  <symbol id="ds-robe" viewBox="0 0 32 32">
+    <path d="M11.5 5h9l-1.6 7h-5.8L11.5 5Z" fill="var(--ds-accent,#a6404e)"/>
+    <path d="M13.2 5.6 16 8.8l2.8-3.2" fill="none" stroke="var(--ds-paper,#f7f4ef)" stroke-width="1.6" stroke-linejoin="round"/>
+    <path d="M13.1 11.4h5.8l7.1 13.3c.6 1.2-.2 2.7-1.6 2.7H7.6c-1.4 0-2.2-1.5-1.6-2.7l7.1-13.3Z" fill="currentColor"/>
+    <path d="M12.4 10.6h7.2v2.6h-7.2z" fill="var(--ds-soft,#ddccb4)"/>
+  </symbol>
+
+  <!-- Sac -->
+  <symbol id="ds-sac" viewBox="0 0 32 32">
+    <path d="M11 13.4V10a5 5 0 0 1 10 0v3.4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M6.4 12.4h19.2c1 0 1.9.8 2 1.8l1.3 10.4c.2 1.4-.9 2.6-2.3 2.6H5.4c-1.4 0-2.5-1.2-2.3-2.6l1.3-10.4c.1-1 1-1.8 2-1.8Z" fill="var(--ds-accent,#a6404e)"/>
+    <path d="M14.6 17.4h2.8a1.2 1.2 0 0 1 0 2.4h-2.8a1.2 1.2 0 0 1 0-2.4Z" fill="var(--ds-soft,#ddccb4)"/>
+  </symbol>
+
+  <!-- Chapeau -->
+  <symbol id="ds-chapeau" viewBox="0 0 32 32">
+    <path d="M16 5.2c-3.7 0-6 2.3-6.5 5.6L8.2 19.4h15.6l-1.3-8.6c-.5-3.3-2.8-5.6-6.5-5.6Z" fill="currentColor"/>
+    <path d="M9 13.6h14l.55 3.6H8.45L9 13.6Z" fill="var(--ds-accent,#a6404e)"/>
+    <ellipse cx="16" cy="20.8" rx="13.6" ry="4" fill="currentColor"/>
+  </symbol>
+
+  <!-- Ciseaux -->
+  <symbol id="ds-ciseaux" viewBox="0 0 32 32">
+    <g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+      <path d="M8.6 5.4 20.4 21.6"/>
+      <path d="M23.4 5.4 11.6 21.6"/>
+    </g>
+    <g fill="none" stroke="var(--ds-accent,#a6404e)" stroke-width="2.2">
+      <circle cx="9.8" cy="24.4" r="3.6"/>
+      <circle cx="22.2" cy="24.4" r="3.6"/>
+    </g>
+    <circle cx="16" cy="15.6" r="1.9" fill="var(--ds-soft,#ddccb4)"/>
+  </symbol>
+
+  <!-- Aiguille et fil -->
+  <symbol id="ds-aiguille" viewBox="0 0 32 32">
+    <path d="M27.4 4.6 11.5 20.6l-1.8-1.9L27.4 4.6Z" fill="currentColor"/>
+    <path d="m11.5 18.9 1.5-1.4" fill="none" stroke="var(--ds-paper,#f7f4ef)" stroke-width="1.2" stroke-linecap="round"/>
+    <g fill="none" stroke="var(--ds-accent,#a6404e)" stroke-width="1.9" stroke-linecap="round">
+      <path d="M10.6 20.4c-2.6 1.4-4.4 2.9-5.3 4.6"/>
+      <circle cx="4.8" cy="26.9" r="2.2"/>
+    </g>
+  </symbol>
+
+  <!-- Bobine de fil -->
+  <symbol id="ds-bobine" viewBox="0 0 32 32">
+    <path d="M10.2 8h11.6v16H10.2z" fill="var(--ds-accent,#a6404e)"/>
+    <g fill="none" stroke="var(--ds-paper,#f7f4ef)" stroke-width="1.4" stroke-linecap="round" opacity=".55">
+      <path d="M10.2 11.6h11.6M10.2 15.4h11.6M10.2 19.2h11.6"/>
+    </g>
+    <path d="M9.1 4.6h13.8a1.7 1.7 0 0 1 0 3.4H9.1a1.7 1.7 0 0 1 0-3.4Z" fill="currentColor"/>
+    <path d="M9.1 24h13.8a1.7 1.7 0 0 1 0 3.4H9.1a1.7 1.7 0 0 1 0-3.4Z" fill="currentColor"/>
+  </symbol>
+
+  <!-- Appareil photo -->
+  <symbol id="ds-appareil-photo" viewBox="0 0 32 32">
+    <path d="M12.4 5.6h7.2l1.6 3.2h4.6A3.2 3.2 0 0 1 29 12v11.2a3.2 3.2 0 0 1-3.2 3.2H6.2A3.2 3.2 0 0 1 3 23.2V12a3.2 3.2 0 0 1 3.2-3.2h4.6l1.6-3.2Z" fill="currentColor"/>
+    <circle cx="16" cy="17.4" r="5.6" fill="var(--ds-accent,#a6404e)"/>
+    <circle cx="16" cy="17.4" r="2.2" fill="var(--ds-paper,#f7f4ef)"/>
+    <circle cx="24.4" cy="12.8" r="1.4" fill="var(--ds-soft,#ddccb4)"/>
+  </symbol>
+
+  <!-- Podium : la passerelle vue de face, deux projecteurs -->
+  <symbol id="ds-podium" viewBox="0 0 32 32">
+    <path d="M11.2 8.6h9.6l6.8 17H4.4l6.8-17Z" fill="currentColor"/>
+    <g fill="none" stroke="var(--ds-soft,#ddccb4)" stroke-width="1.6" stroke-linecap="round" opacity=".85">
+      <path d="M12.9 13h6.2M11.6 17.4h8.8M10.3 21.8h11.4"/>
+    </g>
+    <g fill="var(--ds-accent,#a6404e)">
+      <path d="M4.8 3.4h4.4l1.6 3.4H3.2l1.6-3.4Z"/>
+      <path d="M22.8 3.4h4.4l1.6 3.4h-7.6l1.6-3.4Z"/>
+    </g>
+  </symbol>
+
+  <!-- Rouge à lèvres -->
+  <symbol id="ds-rouge" viewBox="0 0 32 32">
+    <path d="M19.8 12.2h-7.6V8.1c0-.8.5-1.5 1.3-1.8l4.2-1.4c1-.3 2.1.4 2.1 1.5v5.8Z" fill="var(--ds-accent,#a6404e)"/>
+    <path d="M11.2 11.8h9.6V15h-9.6z" fill="var(--ds-soft,#ddccb4)"/>
+    <path d="M11.4 14.8h9.2c.7 0 1.2.6 1.2 1.2v10c0 .7-.5 1.2-1.2 1.2h-9.2c-.7 0-1.2-.5-1.2-1.2V16c0-.6.5-1.2 1.2-1.2Z" fill="currentColor"/>
+  </symbol>
+
+  <!-- Lunettes -->
+  <symbol id="ds-lunettes" viewBox="0 0 32 32">
+    <path d="M2.6 11.4h11.2c.9 0 1.6.8 1.5 1.7l-.3 2.6c-.4 3.1-3 5.4-6.1 5.4-3.2 0-5.9-2.4-6.2-5.6l-.3-2.4c-.1-.9.6-1.7 1.5-1.7Z" fill="currentColor"/>
+    <path d="M18.2 11.4h11.2c.9 0 1.6.8 1.5 1.7l-.3 2.4c-.3 3.2-3 5.6-6.2 5.6-3.1 0-5.7-2.3-6.1-5.4l-.3-2.6c-.1-.9.6-1.7 1.5-1.7Z" fill="currentColor"/>
+    <path d="M13.6 12.6c1.6-.8 3.2-.8 4.8 0" fill="none" stroke="var(--ds-accent,#a6404e)" stroke-width="2" stroke-linecap="round"/>
+  </symbol>
+
+  <!-- Cœur cousu -->
+  <symbol id="ds-coeur" viewBox="0 0 32 32">
+    <path d="M16 27.4S3.4 20.1 3.4 12.3C3.4 8 6.7 5 10.6 5c2.3 0 4.3 1.1 5.4 2.8C17.1 6.1 19.1 5 21.4 5c3.9 0 7.2 3 7.2 7.3 0 7.8-12.6 15.1-12.6 15.1Z" fill="var(--ds-accent,#a6404e)"/>
+    <path d="M16 22.4c-2.8-1.9-8-6-8-10.2" fill="none" stroke="var(--ds-paper,#f7f4ef)" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="2.4 2.8" opacity=".85"/>
+  </symbol>
+
+  <!-- Billet -->
+  <symbol id="ds-ticket" viewBox="0 0 32 32">
+    <path d="M4.4 8.6h23.2c.8 0 1.4.6 1.4 1.4v3.2a2.8 2.8 0 0 0 0 5.6V22c0 .8-.6 1.4-1.4 1.4H4.4c-.8 0-1.4-.6-1.4-1.4v-3.2a2.8 2.8 0 0 0 0-5.6V10c0-.8.6-1.4 1.4-1.4Z" fill="currentColor"/>
+    <path d="M12.6 9.6v12.8" fill="none" stroke="var(--ds-paper,#f7f4ef)" stroke-width="1.4" stroke-dasharray="2.2 2.4"/>
+    <circle cx="20.6" cy="16" r="3" fill="var(--ds-accent,#a6404e)"/>
+  </symbol>
+
+  <!-- Calendrier -->
+  <symbol id="ds-calendrier" viewBox="0 0 32 32">
+    <path d="M6 6.6h20a2.6 2.6 0 0 1 2.6 2.6V24a2.6 2.6 0 0 1-2.6 2.6H6A2.6 2.6 0 0 1 3.4 24V9.2A2.6 2.6 0 0 1 6 6.6Z" fill="currentColor"/>
+    <path d="M3.4 9.2A2.6 2.6 0 0 1 6 6.6h20a2.6 2.6 0 0 1 2.6 2.6v3.4H3.4V9.2Z" fill="var(--ds-accent,#a6404e)"/>
+    <g fill="currentColor">
+      <path d="M10.4 3.4a1.4 1.4 0 0 1 1.4 1.4v3.2a1.4 1.4 0 0 1-2.8 0V4.8a1.4 1.4 0 0 1 1.4-1.4Z"/>
+      <path d="M21.6 3.4A1.4 1.4 0 0 1 23 4.8v3.2a1.4 1.4 0 0 1-2.8 0V4.8a1.4 1.4 0 0 1 1.4-1.4Z"/>
+    </g>
+    <g fill="var(--ds-soft,#ddccb4)">
+      <circle cx="10.2" cy="17.4" r="1.7"/>
+      <circle cx="16" cy="17.4" r="1.7"/>
+      <circle cx="21.8" cy="17.4" r="1.7"/>
+      <circle cx="10.2" cy="22.4" r="1.7"/>
+      <circle cx="16" cy="22.4" r="1.7"/>
+    </g>
+  </symbol>
+
+  <!-- Enveloppe -->
+  <symbol id="ds-enveloppe" viewBox="0 0 32 32">
+    <path d="M5 7.4h22a2.4 2.4 0 0 1 2.4 2.4v12.4A2.4 2.4 0 0 1 27 24.6H5a2.4 2.4 0 0 1-2.4-2.4V9.8A2.4 2.4 0 0 1 5 7.4Z" fill="currentColor"/>
+    <path d="M4.4 9.8 16 18.2 27.6 9.8" fill="none" stroke="var(--ds-soft,#ddccb4)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+
+  <!-- Instagram -->
+  <symbol id="ds-instagram" viewBox="0 0 32 32">
+    <g fill="none" stroke="currentColor" stroke-width="2.4">
+      <path d="M11 4.4h10a6.6 6.6 0 0 1 6.6 6.6v10a6.6 6.6 0 0 1-6.6 6.6H11a6.6 6.6 0 0 1-6.6-6.6V11A6.6 6.6 0 0 1 11 4.4Z"/>
+      <circle cx="16" cy="16" r="5.4"/>
+    </g>
+    <circle cx="23" cy="9" r="1.8" fill="var(--ds-accent,#a6404e)"/>
+  </symbol>
+
+  <!-- Repère de ville : une épingle de couturière plantée sur la carte -->
+  <symbol id="ds-lieu" viewBox="0 0 32 32">
+    <path d="M16 3.4a9 9 0 0 0-9 9c0 6.6 9 16.2 9 16.2s9-9.6 9-16.2a9 9 0 0 0-9-9Z" fill="currentColor"/>
+    <circle cx="16" cy="12.4" r="3.4" fill="var(--ds-accent,#a6404e)"/>
+  </symbol>
+
+</defs>
+</svg>

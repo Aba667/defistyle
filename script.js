@@ -17,11 +17,29 @@
         .replaceAll('"', '&quot;')
         .replaceAll("'", '&#039;');
 
+    // Les emoji maison : le dessin est dans le jeu SVG inséré en haut de page
+    // (bloc ds:emoji, généré depuis emoji/defistyle-emoji.svg).
+    const SVG_NS = 'http://www.w3.org/2000/svg';
+
+    const createIcon = (name, size = 's') => {
+        const svg = document.createElementNS(SVG_NS, 'svg');
+        svg.setAttribute('class', `ds-i ds-i-${size}`);
+        svg.setAttribute('aria-hidden', 'true');
+        const use = document.createElementNS(SVG_NS, 'use');
+        use.setAttribute('href', `#ds-${name}`);
+        svg.appendChild(use);
+        return svg;
+    };
+
+    const iconMarkup = (name, size = 's') => (
+        `<svg class="ds-i ds-i-${size}" aria-hidden="true"><use href="#ds-${name}"></use></svg>`
+    );
+
     const addArrow = (element, label) => {
         element.replaceChildren(document.createTextNode(`${label} `));
         const arrow = document.createElement('span');
         arrow.setAttribute('aria-hidden', 'true');
-        arrow.textContent = '↗';
+        arrow.appendChild(createIcon('fleche'));
         element.appendChild(arrow);
     };
 
@@ -244,7 +262,7 @@
         if (events.length === 0) {
             container.innerHTML = `
                 <article class="coming-soon-card">
-                    <span class="coming-soon-mark" aria-hidden="true">✳</span>
+                    <span class="coming-soon-mark" aria-hidden="true">${iconMarkup('etoile-pleine', 'auto')}</span>
                     <div>
                         <p class="event-type">Prochains rendez-vous</p>
                         <h3>À venir</h3>
@@ -265,9 +283,9 @@
                         <p class="event-type">${escapeHTML(event.label || 'Événement')}</p>
                         <h3>${escapeHTML(event.title || 'À venir')}</h3>
                         <p>${escapeHTML(event.description || '')}</p>
-                        ${tags.length ? `<ul class="event-tags">${tags.map((tag) => `<li>${escapeHTML(tag)}</li>`).join('')}</ul>` : ''}
+                        ${tags.length ? `<ul class="event-tags">${tags.map((tag) => `<li>${iconMarkup('etoile', 'xs')}${escapeHTML(tag)}</li>`).join('')}</ul>` : ''}
                     </div>
-                    <a class="event-arrow" href="${escapeHTML(href)}" aria-label="En savoir plus sur ${escapeHTML(event.title || 'cet événement')}">↗</a>
+                    <a class="event-arrow" href="${escapeHTML(href)}" aria-label="En savoir plus sur ${escapeHTML(event.title || 'cet événement')}">${iconMarkup('fleche', 'm')}</a>
                 </article>`;
         }).join('');
     };

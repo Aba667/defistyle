@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="256" height="256" role="img" aria-label="Aiguille et fil">
+    <title>Défi’style — Aiguille et fil</title>
+    <path d="M27.4 4.6 11.5 20.6l-1.8-1.9L27.4 4.6Z" fill="#161616"/>
+    <path d="m11.5 18.9 1.5-1.4" fill="none" stroke="#f7f4ef" stroke-width="1.2" stroke-linecap="round"/>
+    <g fill="none" stroke="#a6404e" stroke-width="1.9" stroke-linecap="round">
+    <path d="M10.6 20.4c-2.6 1.4-4.4 2.9-5.3 4.6"/>
+    <circle cx="4.8" cy="26.9" r="2.2"/>
+    </g>
+</svg>

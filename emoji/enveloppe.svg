@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="256" height="256" role="img" aria-label="Enveloppe">
+    <title>Défi’style — Enveloppe</title>
+    <path d="M5 7.4h22a2.4 2.4 0 0 1 2.4 2.4v12.4A2.4 2.4 0 0 1 27 24.6H5a2.4 2.4 0 0 1-2.4-2.4V9.8A2.4 2.4 0 0 1 5 7.4Z" fill="#161616"/>
+    <path d="M4.4 9.8 16 18.2 27.6 9.8" fill="none" stroke="#ddccb4" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

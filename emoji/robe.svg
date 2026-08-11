@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="256" height="256" role="img" aria-label="Robe">
+    <title>Défi’style — Robe</title>
+    <path d="M11.5 5h9l-1.6 7h-5.8L11.5 5Z" fill="#a6404e"/>
+    <path d="M13.2 5.6 16 8.8l2.8-3.2" fill="none" stroke="#f7f4ef" stroke-width="1.6" stroke-linejoin="round"/>
+    <path d="M13.1 11.4h5.8l7.1 13.3c.6 1.2-.2 2.7-1.6 2.7H7.6c-1.4 0-2.2-1.5-1.6-2.7l7.1-13.3Z" fill="#161616"/>
+    <path d="M12.4 10.6h7.2v2.6h-7.2z" fill="#ddccb4"/>
+</svg>

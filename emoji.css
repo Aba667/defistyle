@@ -1,0 +1,64 @@
+/*
+ * LES EMOJI DÉFI'STYLE — feuille de style commune
+ *
+ * Le dessin des emoji vit dans emoji/defistyle-emoji.svg et il est recopié
+ * dans chaque page entre <!-- ds:emoji:start --> et <!-- ds:emoji:end -->.
+ * Ce fichier ne s'occupe que de leur taille et de leurs couleurs.
+ *
+ * Usage :  <svg class="ds-i ds-i-s" aria-hidden="true" focusable="false">
+ *              <use href="#ds-fleche"></use>
+ *          </svg>
+ */
+
+:root {
+    --ds-accent: #a6404e;
+    --ds-soft: #ddccb4;
+    --ds-paper: #f7f4ef;
+}
+
+/* Sur fond foncé : le bordeaux devient sable, le papier devient encre,
+   pour que les deux tons de chaque emoji restent lisibles. */
+.ds-sombre {
+    --ds-accent: #ddccb4;
+    --ds-soft: #c6ae91;
+    --ds-paper: #161616;
+}
+
+.ds-jeu {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.ds-i {
+    display: inline-block;
+    flex: none;
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.16em;
+}
+
+/* Tailles fixes : les textes du site descendent à 9 px, un emoji calé sur
+   la taille du texte deviendrait illisible. */
+.ds-i-auto { width: 1em; height: 1em; }     /* suit la taille du texte */
+.ds-i-xs { width: 10px; height: 10px; vertical-align: -1px; }
+.ds-i-s  { width: 14px; height: 14px; vertical-align: -3px; }
+.ds-i-m  { width: 18px; height: 18px; vertical-align: -4px; }
+.ds-i-l  { width: 26px; height: 26px; vertical-align: -6px; }
+.ds-i-xl { width: 44px; height: 44px; vertical-align: -10px; }
+
+/* Le bordeaux ne se voit pas sur lui-même : dans un bloc déjà bordeaux,
+   les emoji passent en sable. */
+.ds-i-clair { --ds-accent: #ddccb4; --ds-soft: #f7f4ef; --ds-paper: #a6404e; }
+
+@media (prefers-reduced-motion: no-preference) {
+    .ds-i-tourne {
+        animation: ds-tourne 14s linear infinite;
+        transform-origin: 50% 50%;
+    }
+}
+
+@keyframes ds-tourne {
+    to { transform: rotate(360deg); }
+}

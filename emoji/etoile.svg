@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="256" height="256" role="img" aria-label="Étoile Défi’style">
+    <title>Défi’style — Étoile Défi’style</title>
+    <g fill="none" stroke="#161616" stroke-width="2.8" stroke-linecap="round">
+    <path d="M16 5.2v21.6"/>
+    <path d="M6.65 10.6 25.35 21.4"/>
+    <path d="M6.65 21.4 25.35 10.6"/>
+    </g>
+</svg>

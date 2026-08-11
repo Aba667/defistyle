@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="256" height="256" role="img" aria-label="Ciseaux">
+    <title>Défi’style — Ciseaux</title>
+    <g fill="none" stroke="#161616" stroke-width="2.2" stroke-linecap="round">
+    <path d="M8.6 5.4 20.4 21.6"/>
+    <path d="M23.4 5.4 11.6 21.6"/>
+    </g>
+    <g fill="none" stroke="#a6404e" stroke-width="2.2">
+    <circle cx="9.8" cy="24.4" r="3.6"/>
+    <circle cx="22.2" cy="24.4" r="3.6"/>
+    </g>
+    <circle cx="16" cy="15.6" r="1.9" fill="#ddccb4"/>
+</svg>
