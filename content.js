@@ -9,7 +9,8 @@ window.DEFISTYLE_CONTENT = {
         url: 'https://www.defistyle.fr',
         contactEmail: 'defistyle2025@gmail.com',
         instagramUrl: 'https://instagram.com/defi_style25',
-        instagramHandle: '@defi_style25'
+        instagramHandle: '@defi_style25',
+        siret: '993 830 017 00014'
     },
 
     // Ajouter un objet à cette liste dès qu'un événement est confirmé.

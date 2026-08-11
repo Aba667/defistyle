@@ -14,7 +14,7 @@
     --sand-deep: #c6ae91;
     --accent: #a6404e;
     --line: rgba(247, 244, 239, 0.18);
-    --serif: 'Bodoni Moda', 'Times New Roman', serif;
+    --serif: 'Bodoni Moda', Georgia, 'Times New Roman', serif;
     --sans: 'Montserrat', Arial, sans-serif;
     --ease: cubic-bezier(0.16, 1, 0.3, 1);
 }

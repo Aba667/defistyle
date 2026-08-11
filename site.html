@@ -17,20 +17,18 @@
     <meta property="og:title" content="Défi'style — La mode en mouvement, ses acteurs aussi.">
     <meta property="og:description" content="Une plateforme pour les jeunes créateurs, mannequins et passionnés qui font l’avenir de la mode.">
     <meta property="og:url" content="https://www.defistyle.fr/site.html">
-    <meta property="og:image" content="https://www.defistyle.fr/photo/dti1.jpg">
+    <meta property="og:image" content="https://www.defistyle.fr/photo/lyon-fashion-day/lyon-fashion-day-095.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Défi'style — La mode en mouvement, ses acteurs aussi.">
     <meta name="twitter:description" content="Une plateforme pour les jeunes créateurs, mannequins et passionnés qui font l’avenir de la mode.">
-    <meta name="twitter:image" content="https://www.defistyle.fr/photo/dti1.jpg">
+    <meta name="twitter:image" content="https://www.defistyle.fr/photo/lyon-fashion-day/lyon-fashion-day-095.jpg">
 
     <link rel="icon" type="image/jpeg" href="photo/logo.jpeg">
     <link rel="apple-touch-icon" href="photo/logo.jpeg">
     <link rel="manifest" href="site.webmanifest">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="emoji.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="consent.css">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -39,6 +37,7 @@
         "url": "https://www.defistyle.fr/",
         "logo": "https://www.defistyle.fr/photo/logo.jpeg",
         "email": "defistyle2025@gmail.com",
+        "taxID": "993 830 017 00014",
         "areaServed": ["Metz", "Lyon", "Paris"],
         "address": {
             "@type": "PostalAddress",
@@ -245,6 +244,7 @@
             </button>
 
             <ul class="nav-links" id="site-nav">
+                <li><a class="nav-home" href="index.html">Accueil</a></li>
                 <li><a href="#projet">Le projet</a></li>
                 <li><a href="#journal">Le journal</a></li>
                 <li><a href="#models">Les modèles</a></li>
@@ -274,8 +274,8 @@
 
             <div class="hero-media">
                 <picture>
-                    <source type="image/webp" srcset="photo/lyon-fashion-day/lyon-fashion-day-001.webp" sizes="(max-width: 820px) 100vw, 58vw">
-                    <img src="photo/lyon-fashion-day/lyon-fashion-day-001.jpg" alt="Mannequin sur le podium du Lyon Fashion Day" width="1316" height="1800" fetchpriority="high">
+                    <source type="image/webp" srcset="photo/lyon-fashion-day/lyon-fashion-day-095.webp" sizes="(max-width: 820px) 100vw, 58vw">
+                    <img src="photo/lyon-fashion-day/lyon-fashion-day-095.jpg" alt="Deux participantes lors du Lyon Fashion Day" width="1200" height="1800" fetchpriority="high">
                 </picture>
                 <div class="hero-overlay"></div>
                 <div class="hero-media-meta">
@@ -631,9 +631,9 @@
             <p>Metz <svg class="ds-i ds-i-xs" aria-hidden="true"><use href="#ds-bouton"></use></svg> Lyon <svg class="ds-i ds-i-xs" aria-hidden="true"><use href="#ds-bouton"></use></svg> Paris</p>
         </div>
         <div class="shell footer-bottom">
-            <p>© 2026 Défi'style — 8 place Jeanne d'Arc, 57000 Metz</p>
+            <p>© 2026 Défi'style — 8 place Jeanne d'Arc, 57000 Metz<br>SIRET : 993 830 017 00014</p>
             <p>Un projet de mode, de culture et de rencontres.</p>
-            <p><a href="index.html">Revenir à la page d'accueil <svg class="ds-i ds-i-xs"><use href="#ds-fleche"></use></svg></a></p>
+            <p><a href="index.html">Revenir à la page d'accueil <svg class="ds-i ds-i-xs"><use href="#ds-fleche"></use></svg></a><br><a href="mentions-legales.html">Mentions légales &amp; vie privée</a><br><button class="footer-cookie-button" type="button" data-cookie-settings>Gérer mes cookies</button></p>
         </div>
     </footer>
 
@@ -676,7 +676,37 @@
         <img class="lightbox-content" id="lightbox-img" alt="">
     </div>
 
+    <aside class="cookie-banner ds-sombre" id="cookie-banner" hidden aria-labelledby="cookie-banner-title">
+        <div>
+            <p class="cookie-kicker">Vie privée</p>
+            <h2 id="cookie-banner-title">Votre choix compte.</h2>
+            <p>Défi'style utilise uniquement ce qui est nécessaire au fonctionnement du site. Aucun cookie publicitaire ou outil de mesure d'audience n'est activé actuellement.</p>
+            <a href="mentions-legales.html#cookies">En savoir plus</a>
+        </div>
+        <div class="cookie-actions">
+            <button class="cookie-button cookie-button-secondary" type="button" data-cookie-reject>Tout refuser</button>
+            <button class="cookie-button cookie-button-secondary" type="button" data-cookie-settings>Personnaliser</button>
+            <button class="cookie-button cookie-button-primary" type="button" data-cookie-accept>Tout accepter</button>
+        </div>
+    </aside>
+
+    <div class="cookie-dialog" id="cookie-dialog" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="cookie-dialog-title">
+        <div class="cookie-dialog-panel">
+            <button class="cookie-dialog-close" type="button" data-cookie-close aria-label="Fermer les préférences cookies">×</button>
+            <p class="cookie-kicker">Préférences</p>
+            <h2 id="cookie-dialog-title">Les cookies, simplement.</h2>
+            <p>Les cookies nécessaires permettent au site de fonctionner. Les cookies optionnels ne sont pas utilisés à ce jour.</p>
+            <label class="cookie-choice"><input type="checkbox" checked disabled> <span><strong>Nécessaires</strong><small>Toujours actifs pour afficher le site et mémoriser votre choix.</small></span></label>
+            <label class="cookie-choice"><input type="checkbox" data-cookie-optional> <span><strong>Optionnels</strong><small>Non utilisés actuellement. Ils resteront désactivés tant qu'aucun service n'en aura besoin.</small></span></label>
+            <div class="cookie-dialog-actions">
+                <button class="cookie-button cookie-button-secondary" type="button" data-cookie-reject>Tout refuser</button>
+                <button class="cookie-button cookie-button-primary" type="button" data-cookie-save>Enregistrer mes choix</button>
+            </div>
+        </div>
+    </div>
+
     <script src="content.js" defer></script>
     <script src="script.js" defer></script>
+    <script src="consent.js" defer></script>
 </body>
 </html>

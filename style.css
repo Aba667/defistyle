@@ -9,7 +9,7 @@
     --muted: #77716a;
     --line: rgba(22, 22, 22, 0.15);
     --line-light: rgba(247, 244, 239, 0.24);
-    --serif: 'Bodoni Moda', 'Times New Roman', serif;
+    --serif: 'Bodoni Moda', Georgia, 'Times New Roman', serif;
     --sans: 'Montserrat', Arial, sans-serif;
     --ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -206,6 +206,23 @@ button {
 
 .nav-cta:hover,
 .nav-cta:focus-visible {
+    background: var(--ink);
+    color: var(--paper) !important;
+}
+
+.nav-home {
+    padding: 10px 12px;
+    border: 1px solid var(--line);
+    background: transparent;
+}
+
+.nav-home::after {
+    display: none;
+}
+
+.nav-home:hover,
+.nav-home:focus-visible {
+    border-color: var(--ink);
     background: var(--ink);
     color: var(--paper) !important;
 }
