@@ -104,6 +104,16 @@
         if (event.target === lightbox) closeLightbox();
     });
 
+    // Les images mises en avant peuvent aussi être ouvertes en grand,
+    // y compris lorsqu'elles sont injectées ensuite dans un article.
+    document.addEventListener('click', (event) => {
+        const trigger = event.target.closest('[data-lightbox-src]');
+        if (!trigger) return;
+
+        const image = trigger.querySelector('img');
+        openLightbox(trigger.dataset.lightboxSrc, trigger.dataset.lightboxAlt || image?.alt);
+    });
+
     const createResponsiveImage = ({ src, webp, alt, width = 900, height = 1125, loading = 'lazy' }) => {
         const picture = document.createElement('picture');
         if (webp) {

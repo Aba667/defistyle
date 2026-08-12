@@ -1176,8 +1176,15 @@ h3 em {
     align-items: center;
     justify-content: center;
     align-self: center;
+    width: 100%;
+    padding: 0;
+    border: 0;
     overflow: hidden;
     background: var(--sand-deep);
+    color: inherit;
+    cursor: zoom-in;
+    font: inherit;
+    text-align: left;
 }
 
 .upcoming-poster picture {
@@ -1192,6 +1199,18 @@ h3 em {
     width: 100%;
     height: auto;
     filter: saturate(0.92) contrast(1.03);
+    transition: transform 350ms ease;
+}
+
+.upcoming-poster:hover img,
+.upcoming-poster:focus-visible img {
+    transform: scale(1.012);
+}
+
+.upcoming-poster:focus-visible,
+.article-event-media:focus-visible {
+    outline: 2px solid var(--sand);
+    outline-offset: 5px;
 }
 
 .upcoming-copy {
@@ -2397,13 +2416,25 @@ h3 em {
 
 .article-event-media {
     margin: 0 0 30px;
+    width: 100%;
+    padding: 0;
+    border: 0;
     background: var(--sand);
+    color: inherit;
+    cursor: zoom-in;
+    text-align: left;
 }
 
 .article-event-media img {
     display: block;
     width: 100%;
     height: auto;
+    transition: transform 350ms ease;
+}
+
+.article-event-media:hover img,
+.article-event-media:focus-visible img {
+    transform: scale(1.012);
 }
 
 .article-event-details {
