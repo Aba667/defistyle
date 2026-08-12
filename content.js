@@ -13,17 +13,28 @@ window.DEFISTYLE_CONTENT = {
         siret: '993 830 017 00014'
     },
 
-    // Ajouter un objet à cette liste dès qu'un événement est confirmé.
-    // Exemple :
-    // {
-    //     date: '12.10.2026',
-    //     label: 'Événement / Défilé',
-    //     title: 'Nom de l’événement',
-    //     description: 'Une courte présentation du rendez-vous.',
-    //     tags: ['Paris', 'Entrée sur inscription'],
-    //     href: '#rejoindre'
-    // }
-    upcomingEvents: [],
+    // Les événements confirmés apparaissent dans l'agenda et peuvent être
+    // mis en avant dans le journal grâce à leur visuel et leur lien.
+    upcomingEvents: [
+        {
+            date: '29.08.2026',
+            label: '1 an de Défi\'style · Lyon',
+            title: 'One Year, New Era',
+            description: 'Une soirée pour célébrer la première année de Défi\'style et ouvrir une nouvelle ère : accueil chic, dîner, espace photo, célébration et présentation de la suite de l\'aventure.',
+            tags: [
+                'Samedi · 20h00 — 23h00',
+                'Beaucoco · 13 place Jules Ferry, Lyon 06',
+                'Dress code : beige obligatoire',
+                'Consommation minimum : 30 €',
+                'Confirmation avant le 20 août'
+            ],
+            href: '#one-year-article',
+            actionLabel: 'Lire l\'article sur One Year, New Era',
+            image: 'photo/evenements/one-year-new-era.jpg',
+            webp: 'photo/evenements/one-year-new-era.webp',
+            imageAlt: 'Affiche de la soirée One Year, New Era pour les un an de Défi\'style'
+        }
+    ],
 
     // Lyon Fashion Day — 11 juillet 2026.
     // Les images sont réduites pour le web et chargées progressivement dans la galerie.

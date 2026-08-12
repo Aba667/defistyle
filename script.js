@@ -275,8 +275,16 @@
         container.innerHTML = events.map((event, index) => {
             const tags = Array.isArray(event.tags) ? event.tags : [];
             const href = event.href || '#rejoindre';
+            const actionLabel = event.actionLabel || `En savoir plus sur ${event.title || 'cet événement'}`;
+            const visual = event.image ? `
+                    <div class="event-card-visual">
+                        <picture>
+                            ${event.webp ? `<source type="image/webp" srcset="${escapeHTML(event.webp)}">` : ''}
+                            <img src="${escapeHTML(event.image)}" alt="${escapeHTML(event.imageAlt || event.title || 'Visuel de l’événement')}" width="960" height="768" loading="lazy" decoding="async">
+                        </picture>
+                    </div>` : '';
             return `
-                <article class="event-card">
+                <article class="event-card${event.image ? ' event-card-featured' : ''}">
                     <div class="event-number">${String(index + 1).padStart(2, '0')}</div>
                     <div class="event-date"><strong>${escapeHTML(event.date || 'À venir')}</strong><span>${escapeHTML(event.label || 'Événement Défi\'style')}</span></div>
                     <div class="event-detail">
@@ -285,7 +293,8 @@
                         <p>${escapeHTML(event.description || '')}</p>
                         ${tags.length ? `<ul class="event-tags">${tags.map((tag) => `<li>${iconMarkup('etoile', 'xs')}${escapeHTML(tag)}</li>`).join('')}</ul>` : ''}
                     </div>
-                    <a class="event-arrow" href="${escapeHTML(href)}" aria-label="En savoir plus sur ${escapeHTML(event.title || 'cet événement')}">${iconMarkup('fleche', 'm')}</a>
+                    ${visual}
+                    <a class="event-arrow" href="${escapeHTML(href)}" aria-label="${escapeHTML(actionLabel)}">${iconMarkup('fleche', 'm')}</a>
                 </article>`;
         }).join('');
     };
