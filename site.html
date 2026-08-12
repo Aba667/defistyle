@@ -274,9 +274,9 @@
 
             <ul class="nav-links" id="site-nav">
                 <li><a class="nav-home" href="index.html">Accueil</a></li>
+                <li><a href="#agenda">À venir</a></li>
                 <li><a href="#projet">Le projet</a></li>
                 <li><a href="#journal">Le journal</a></li>
-                <li><a href="#agenda">À venir</a></li>
                 <li><a href="#archives">Archives</a></li>
                 <li><a href="#rejoindre">Nous rejoindre</a></li>
                 <li><a class="nav-cta" href="#contact">Nous écrire <span aria-hidden="true"><svg class="ds-i ds-i-s"><use href="#ds-fleche"></use></svg></span></a></li>
@@ -321,10 +321,90 @@
             </div>
         </div>
 
+        <section class="section agenda-section ds-sombre" id="agenda" aria-labelledby="agenda-title">
+            <div class="shell">
+                <div class="section-topline section-topline-light">
+                    <p class="eyebrow">01 — À venir</p>
+                    <p class="section-index">Le rendez-vous anniversaire</p>
+                </div>
+                <div class="section-heading agenda-heading">
+                    <h2 id="agenda-title">À venir,<br><em>en grand.</em></h2>
+                    <p>Défi'style fête sa première année à Lyon. Une soirée pour se retrouver, célébrer le chemin parcouru et donner le ton de la suite.</p>
+                </div>
+
+                <article class="upcoming-feature" aria-labelledby="one-year-title">
+                    <div class="upcoming-poster">
+                        <picture>
+                            <source type="image/webp" srcset="photo/evenements/one-year-new-era.webp" sizes="(max-width: 820px) 100vw, 38vw">
+                            <img src="photo/evenements/one-year-new-era.jpg" alt="Affiche de la soirée One Year, New Era pour les un an de Défi'style" width="960" height="768" loading="eager">
+                        </picture>
+                        <span class="upcoming-poster-stamp">1 an<br>Défi'style</span>
+                    </div>
+
+                    <div class="upcoming-copy">
+                        <p class="event-type">Samedi 29 août 2026 · Lyon</p>
+                        <h3 id="one-year-title">One Year,<br><em>New Era.</em></h3>
+                        <p class="upcoming-lede">Night of Glamour : une soirée exclusive pour célébrer une année de style, d'élégance et de nouvelles ambitions.</p>
+
+                        <dl class="upcoming-facts">
+                            <div>
+                                <dt><svg class="ds-i ds-i-s" aria-hidden="true"><use href="#ds-calendrier"></use></svg> Date &amp; heure</dt>
+                                <dd>Samedi 29 août<br>20h00 — 23h00</dd>
+                            </div>
+                            <div>
+                                <dt><svg class="ds-i ds-i-s" aria-hidden="true"><use href="#ds-lieu"></use></svg> Lieu</dt>
+                                <dd>Beaucoco<br>13 place Jules Ferry, Lyon 06</dd>
+                            </div>
+                            <div>
+                                <dt><svg class="ds-i ds-i-s" aria-hidden="true"><use href="#ds-robe"></use></svg> Dress code</dt>
+                                <dd>Beige obligatoire<br>Rouge, noir, or, blanc ou marron</dd>
+                            </div>
+                            <div>
+                                <dt><svg class="ds-i ds-i-s" aria-hidden="true"><use href="#ds-ticket"></use></svg> Participation</dt>
+                                <dd>Consommation minimum<br>30 €</dd>
+                            </div>
+                        </dl>
+
+                        <div class="upcoming-program">
+                            <p>Au programme</p>
+                            <ul>
+                                <li>Accueil chic</li>
+                                <li>Espace photo</li>
+                                <li>Dîner d'exception</li>
+                                <li>Célébration &amp; nouvelle vision</li>
+                            </ul>
+                        </div>
+
+                        <div class="upcoming-actions">
+                            <button class="button button-light" type="button" data-article="article-one-year">Découvrir la soirée <span aria-hidden="true"><svg class="ds-i ds-i-s"><use href="#ds-fleche"></use></svg></span></button>
+                            <a class="agenda-confirm-link" href="mailto:defistyle2025@gmail.com?subject=Confirmation%20de%20presence%20One%20Year%20New%20Era">Je confirme ma présence <span aria-hidden="true"><svg class="ds-i ds-i-s"><use href="#ds-fleche"></use></svg></span></a>
+                        </div>
+                        <p class="agenda-rsvp">Confirmation souhaitée avant le 20 août 2026.</p>
+                    </div>
+                </article>
+
+                <div class="agenda-signup">
+                    <div>
+                        <p class="eyebrow">Ne rien manquer</p>
+                        <h3>Recevoir les<br><em>prochains rendez-vous.</em></h3>
+                    </div>
+                    <form class="signup-form" data-mail-form="newsletter" novalidate>
+                        <label for="newsletter-email">Votre adresse email</label>
+                        <div class="signup-row">
+                            <input id="newsletter-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="vous@exemple.fr" required>
+                            <button class="button button-light" type="submit">S'inscrire <span aria-hidden="true"><svg class="ds-i ds-i-s"><use href="#ds-fleche"></use></svg></span></button>
+                        </div>
+                        <p class="form-status" aria-live="polite"></p>
+                        <p class="form-note">Votre demande ouvre un message prêt à envoyer à l'équipe Défi'style.</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
         <section class="section intro-section" id="projet" aria-labelledby="projet-title">
             <div class="shell">
                 <div class="section-topline">
-                    <p class="eyebrow">01 — Le projet</p>
+                    <p class="eyebrow">02 — Le projet</p>
                     <p class="section-index">La mode, avec celles et ceux qui la font</p>
                 </div>
                 <div class="section-heading intro-heading">
@@ -373,7 +453,7 @@
         <section class="section journal-section" id="journal" aria-labelledby="journal-title">
             <div class="shell">
                 <div class="section-topline">
-                    <p class="eyebrow">02 — Le journal</p>
+                    <p class="eyebrow">03 — Le journal</p>
                     <a class="section-link" href="#archives">Voir toutes les images <span aria-hidden="true"><svg class="ds-i ds-i-s"><use href="#ds-fleche"></use></svg></span></a>
                 </div>
                 <div class="section-heading">
@@ -382,30 +462,13 @@
                 </div>
 
                 <div class="journal-grid">
-                    <article class="story-card story-featured story-event" id="one-year-article">
-                        <div class="story-image">
-                            <picture>
-                                <source type="image/webp" srcset="photo/evenements/one-year-new-era.webp" sizes="(max-width: 820px) 100vw, 56vw">
-                                <img src="photo/evenements/one-year-new-era.jpg" alt="Affiche de la soirée One Year, New Era pour les un an de Défi'style" width="960" height="768" loading="lazy">
-                            </picture>
-                            <span class="story-number">01</span>
-                            <span class="story-badge">Prochain rendez-vous</span>
-                        </div>
-                        <div class="story-body">
-                            <p class="story-meta"><span>One Year, New Era</span> — 29.08.2026</p>
-                            <h3>Un an de Défi'style.<br><em>Une nouvelle ère.</em></h3>
-                            <p>Le 29 août, rendez-vous au Beaucoco à Lyon pour une soirée de partage, de style et de célébration. Une première année se fête avec celles et ceux qui ont fait le chemin.</p>
-                            <button class="story-link" type="button" data-article="article-one-year">Lire l'article <span aria-hidden="true"><svg class="ds-i ds-i-s"><use href="#ds-fleche"></use></svg></span></button>
-                        </div>
-                    </article>
-
-                    <article class="story-card">
+                    <article class="story-card story-featured">
                         <div class="story-image">
                             <picture>
                                 <source type="image/webp" srcset="photo/web/dti2-960.webp" sizes="(max-width: 820px) 100vw, 56vw">
                                 <img src="photo/dti2.jpg" alt="Portrait d'un participant au Dress to Impress" width="1280" height="1600" loading="lazy">
                             </picture>
-                            <span class="story-number">02</span>
+                            <span class="story-number">01</span>
                         </div>
                         <div class="story-body">
                             <p class="story-meta"><span>Lyon Fashion Day</span> — 11.07.2026</p>
@@ -421,7 +484,7 @@
                                 <source type="image/webp" srcset="photo/web/image00001-960.webp" sizes="(max-width: 820px) 100vw, 42vw">
                                 <img src="photo/image00001.jpeg" alt="Portrait mode dans les archives lyonnaises" width="1488" height="2048" loading="lazy">
                             </picture>
-                            <span class="story-number">03</span>
+                            <span class="story-number">02</span>
                         </div>
                         <div class="story-body">
                             <p class="story-meta"><span>Coulisses</span> — 18.05.2026</p>
@@ -446,7 +509,7 @@
         <section class="section selection-section" id="models" aria-labelledby="selection-title">
             <div class="shell">
                 <div class="section-topline">
-                    <p class="eyebrow">03 — Les modèles</p>
+                    <p class="eyebrow">04 — Les modèles</p>
                     <a class="section-link" data-instagram-link href="https://instagram.com/defi_style25" target="_blank" rel="noreferrer">Suivre <span data-instagram-handle>@defi_style25</span> <span aria-hidden="true"><svg class="ds-i ds-i-s"><use href="#ds-fleche"></use></svg></span></a>
                 </div>
                 <div class="section-heading selection-heading">
@@ -461,37 +524,6 @@
                     <span class="instagram-feature-copy"><small>Au quotidien</small><strong>Suivre <span data-instagram-handle>@defi_style25</span></strong></span>
                     <span class="instagram-feature-arrow" aria-hidden="true"><svg class="ds-i"><use href="#ds-fleche"></use></svg></span>
                 </a>
-            </div>
-        </section>
-
-        <section class="section agenda-section ds-sombre" id="agenda" aria-labelledby="agenda-title">
-            <div class="shell">
-                <div class="section-topline section-topline-light">
-                    <p class="eyebrow">04 — L'agenda</p>
-                    <p class="section-index">Les prochains chapitres</p>
-                </div>
-                <div class="section-heading agenda-heading">
-                    <h2 id="agenda-title">À venir,<br><em>sur le podium.</em></h2>
-                    <p>Le prochain rendez-vous est confirmé : une soirée anniversaire pour célébrer un an de Défi'style et ouvrir un nouveau chapitre à Lyon.</p>
-                </div>
-
-                <div class="event-list" data-upcoming-events aria-live="polite"></div>
-
-                <div class="agenda-signup">
-                    <div>
-                        <p class="eyebrow">Ne rien manquer</p>
-                        <h3>Recevoir les<br><em>prochains rendez-vous.</em></h3>
-                    </div>
-                    <form class="signup-form" data-mail-form="newsletter" novalidate>
-                        <label for="newsletter-email">Votre adresse email</label>
-                        <div class="signup-row">
-                            <input id="newsletter-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="vous@exemple.fr" required>
-                            <button class="button button-light" type="submit">S'inscrire <span aria-hidden="true"><svg class="ds-i ds-i-s"><use href="#ds-fleche"></use></svg></span></button>
-                        </div>
-                        <p class="form-status" aria-live="polite"></p>
-                        <p class="form-note">Votre demande ouvre un message prêt à envoyer à l'équipe Défi'style.</p>
-                    </form>
-                </div>
             </div>
         </section>
 

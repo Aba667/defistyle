@@ -1081,20 +1081,6 @@ h3 em {
     font-size: 15px;
 }
 
-.story-badge {
-    position: absolute;
-    bottom: 17px;
-    left: 17px;
-    padding: 8px 11px;
-    background: var(--accent);
-    color: var(--paper);
-    font-size: 8px;
-    font-weight: 700;
-    letter-spacing: 1.3px;
-    line-height: 1.2;
-    text-transform: uppercase;
-}
-
 .story-body {
     padding-top: 20px;
 }
@@ -1170,6 +1156,216 @@ h3 em {
 
 .agenda-heading > p {
     color: rgba(247, 244, 239, 0.66);
+}
+
+.upcoming-feature {
+    display: grid;
+    grid-template-columns: minmax(240px, 0.62fr) minmax(0, 1fr);
+    gap: clamp(32px, 6vw, 82px);
+    align-items: stretch;
+    padding: clamp(18px, 3vw, 34px);
+    border: 1px solid var(--line-light);
+    background:
+        linear-gradient(135deg, rgba(221, 204, 180, 0.13), rgba(221, 204, 180, 0.02) 56%),
+        rgba(247, 244, 239, 0.035);
+}
+
+.upcoming-poster {
+    position: relative;
+    min-height: 450px;
+    overflow: hidden;
+    background: var(--sand-deep);
+}
+
+.upcoming-poster picture,
+.upcoming-poster img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.upcoming-poster img {
+    min-height: 450px;
+    object-fit: cover;
+    filter: saturate(0.92) contrast(1.03);
+}
+
+.upcoming-poster-stamp {
+    position: absolute;
+    top: 17px;
+    left: 17px;
+    display: grid;
+    place-items: center;
+    width: 86px;
+    height: 86px;
+    border: 1px solid rgba(247, 244, 239, 0.78);
+    border-radius: 50%;
+    background: rgba(22, 22, 22, 0.78);
+    color: var(--paper);
+    font-family: var(--serif);
+    font-size: 18px;
+    font-style: italic;
+    line-height: 0.95;
+    text-align: center;
+    transform: rotate(-11deg);
+}
+
+.upcoming-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(8px, 1.8vw, 20px) 0;
+}
+
+.upcoming-copy h3 {
+    margin: 12px 0 17px;
+    font-family: var(--serif);
+    font-size: clamp(3rem, 5.2vw, 5.4rem);
+    font-weight: 500;
+    letter-spacing: -0.065em;
+    line-height: 0.88;
+}
+
+.upcoming-copy h3 em {
+    color: var(--sand);
+}
+
+.upcoming-lede {
+    max-width: 510px;
+    color: rgba(247, 244, 239, 0.72);
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+.upcoming-facts {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: 32px 0 0;
+    border-top: 1px solid var(--line-light);
+    border-left: 1px solid var(--line-light);
+}
+
+.upcoming-facts > div {
+    min-height: 118px;
+    padding: 16px 17px;
+    border-right: 1px solid var(--line-light);
+    border-bottom: 1px solid var(--line-light);
+}
+
+.upcoming-facts dt {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    color: var(--sand);
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    line-height: 1.3;
+    text-transform: uppercase;
+}
+
+.upcoming-facts dt .ds-i {
+    font-size: 17px;
+}
+
+.upcoming-facts dd {
+    color: rgba(247, 244, 239, 0.82);
+    font-family: var(--serif);
+    font-size: 15px;
+    line-height: 1.3;
+}
+
+.upcoming-program {
+    display: flex;
+    align-items: flex-start;
+    gap: 21px;
+    margin-top: 25px;
+}
+
+.upcoming-program > p {
+    flex: 0 0 auto;
+    padding-top: 3px;
+    color: var(--sand);
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+
+.upcoming-program ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px 17px;
+    list-style: none;
+}
+
+.upcoming-program li {
+    color: rgba(247, 244, 239, 0.64);
+    font-size: 10px;
+    line-height: 1.45;
+}
+
+.upcoming-program li::before {
+    margin-right: 7px;
+    color: var(--accent);
+    content: '✦';
+}
+
+.upcoming-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 22px;
+    margin-top: 29px;
+}
+
+.agenda-confirm-link {
+    position: relative;
+    padding-bottom: 5px;
+    color: var(--paper);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.agenda-confirm-link::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    background: var(--sand);
+    content: '';
+    transform: scaleX(0.45);
+    transform-origin: left;
+    transition: transform 250ms var(--ease);
+}
+
+.agenda-confirm-link:hover::after,
+.agenda-confirm-link:focus-visible::after {
+    transform: scaleX(1);
+}
+
+.agenda-confirm-link span {
+    display: inline-block;
+    margin-left: 6px;
+    transition: transform 250ms var(--ease);
+}
+
+.agenda-confirm-link:hover span {
+    transform: translate(3px, -3px);
+}
+
+.agenda-rsvp {
+    margin-top: 18px;
+    color: rgba(247, 244, 239, 0.52);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
 }
 
 .event-list {
@@ -1311,7 +1507,7 @@ h3 em {
 
 .event-card {
     display: grid;
-    grid-template-columns: 42px minmax(145px, 0.38fr) minmax(0, 1fr) minmax(180px, 0.56fr) 44px;
+    grid-template-columns: 42px minmax(145px, 0.45fr) minmax(0, 1.3fr) 44px;
     gap: clamp(20px, 3vw, 54px);
     align-items: start;
     padding: 34px 0;
@@ -1379,32 +1575,6 @@ h3 em {
     color: rgba(247, 244, 239, 0.67);
     font-size: 12px;
     line-height: 1.75;
-}
-
-.event-card-visual {
-    align-self: stretch;
-    min-height: 165px;
-    overflow: hidden;
-    background: var(--sand);
-}
-
-.event-card-visual picture,
-.event-card-visual img {
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-
-.event-card-visual img {
-    min-height: 165px;
-    object-fit: cover;
-    filter: saturate(0.9);
-    transition: transform 650ms var(--ease), filter 350ms ease;
-}
-
-.event-card:hover .event-card-visual img {
-    transform: scale(1.035);
-    filter: saturate(1);
 }
 
 .event-tags {
@@ -2611,7 +2781,8 @@ h3 em {
     .intro-grid,
     .archive-feature,
     .contact-grid,
-    .agenda-signup {
+    .agenda-signup,
+    .upcoming-feature {
         grid-template-columns: 1fr;
     }
 
@@ -2673,16 +2844,22 @@ h3 em {
         grid-row: 1 / span 2;
     }
 
-    .event-card-visual {
-        grid-column: 2 / span 2;
-        grid-row: auto;
-        width: min(100%, 430px);
-        min-height: 220px;
-        margin-top: 5px;
+    .upcoming-feature {
+        gap: 34px;
     }
 
-    .event-card-visual img {
-        min-height: 220px;
+    .upcoming-poster,
+    .upcoming-poster img {
+        min-height: 0;
+    }
+
+    .upcoming-poster {
+        width: min(100%, 560px);
+        aspect-ratio: 5 / 4;
+    }
+
+    .upcoming-copy {
+        padding: 0;
     }
 
     .agenda-footer {
@@ -2845,6 +3022,51 @@ h3 em {
         margin-bottom: 51px;
     }
 
+    .upcoming-feature {
+        margin-right: -1px;
+        margin-left: -1px;
+        padding: 13px;
+    }
+
+    .upcoming-poster-stamp {
+        width: 68px;
+        height: 68px;
+        font-size: 15px;
+    }
+
+    .upcoming-copy h3 {
+        font-size: clamp(2.85rem, 15vw, 4.4rem);
+    }
+
+    .upcoming-lede {
+        font-size: 13px;
+    }
+
+    .upcoming-facts {
+        grid-template-columns: 1fr;
+        margin-top: 26px;
+    }
+
+    .upcoming-facts > div {
+        min-height: 0;
+        padding: 15px;
+    }
+
+    .upcoming-program {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .upcoming-actions {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 17px;
+    }
+
+    .upcoming-actions .button {
+        width: 100%;
+    }
+
     .agenda-signup {
         margin-top: 36px;
         padding: 27px 21px;
@@ -2879,14 +3101,6 @@ h3 em {
     .event-arrow {
         width: 32px;
         height: 32px;
-    }
-
-    .event-card-visual {
-        min-height: 175px;
-    }
-
-    .event-card-visual img {
-        min-height: 175px;
     }
 
     .agenda-footer .button {
