@@ -1162,7 +1162,7 @@ h3 em {
     display: grid;
     grid-template-columns: minmax(240px, 0.62fr) minmax(0, 1fr);
     gap: clamp(32px, 6vw, 82px);
-    align-items: start;
+    align-items: center;
     padding: clamp(18px, 3vw, 34px);
     border: 1px solid var(--line-light);
     background:
@@ -1175,7 +1175,7 @@ h3 em {
     display: flex;
     align-items: center;
     justify-content: center;
-    align-self: start;
+    align-self: center;
     overflow: hidden;
     background: var(--sand-deep);
 }
