@@ -5,8 +5,32 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.defistyle.fr/site.html</loc>
+    <loc>https://www.defistyle.fr/a-venir.html</loc>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.defistyle.fr/projet.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.defistyle.fr/journal.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.defistyle.fr/archives.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.defistyle.fr/collaborations.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.defistyle.fr/rejoindre.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.defistyle.fr/nous-ecrire.html</loc>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.defistyle.fr/mentions-legales.html</loc>
