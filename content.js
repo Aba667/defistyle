@@ -16,14 +16,14 @@ window.DEFISTYLE_CONTENT = {
 
     upcomingEvents: [],
 
-    // Lyon Fashion Day — 11 juillet 2026.
+    // Lyon Fashion Day, 11 juillet 2026.
     // Les images sont réduites pour le web et chargées progressivement dans la galerie.
     lyonFashionDayPhotos: Array.from({ length: 144 }, (_, index) => {
         const photoNumber = String(index + 1).padStart(3, '0');
         return {
             src: `photo/lyon-fashion-day/lyon-fashion-day-${photoNumber}.jpg`,
             thumb: `photo/lyon-fashion-day/lyon-fashion-day-${photoNumber}.webp`,
-            alt: `Lyon Fashion Day — photographie ${index + 1}`
+            alt: `Lyon Fashion Day, photographie ${index + 1}`
         };
     }),
 

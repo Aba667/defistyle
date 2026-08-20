@@ -172,7 +172,7 @@
             return {
                 src: `photo/${prefix}${value}.${extension}`,
                 webp: `photo/thumbs/${prefix}${value}.webp`,
-                alt: `${label} — photographie ${index + 1}`
+                alt: `${label}, photographie ${index + 1}`
             };
         })
     );
@@ -226,7 +226,7 @@
         {
             containerId: 'gallery-prada',
             buttonId: 'btn-prada',
-            assets: createGalleryAssets({ prefix: 'dti', start: 1, end: 107, extension: 'jpg', padded: false, label: 'Dress to Impress — Le Diable s\'habille en Prada' })
+            assets: createGalleryAssets({ prefix: 'dti', start: 1, end: 107, extension: 'jpg', padded: false, label: 'Dress to Impress : Le Diable s\'habille en Prada' })
         },
         {
             containerId: 'gallery-retro',
@@ -236,7 +236,7 @@
         {
             containerId: 'gallery-lyon',
             buttonId: 'btn-lyon',
-            assets: createGalleryAssets({ prefix: 'image', start: 1, end: 175, extension: 'jpeg', padded: true, label: 'Dress to Impress — silhouettes lyonnaises' })
+            assets: createGalleryAssets({ prefix: 'image', start: 1, end: 175, extension: 'jpeg', padded: true, label: 'Dress to Impress : silhouettes lyonnaises' })
         },
         {
             containerId: 'gallery-metz',
@@ -257,7 +257,7 @@
             assets: photos.map((photo, index) => ({
                 src: photo.src,
                 webp: photo.thumb || '',
-                alt: photo.alt || `Lyon Fashion Day — photographie ${index + 1}`
+                alt: photo.alt || `Lyon Fashion Day, photographie ${index + 1}`
             })),
             initialBatch: 6,
             nextBatch: 12
@@ -335,7 +335,7 @@
                     `Mon adresse email : ${email}`
                 ];
             } else {
-                subject = `Nouvelle demande — ${form.elements.interest.value}`;
+                subject = `Nouvelle demande : ${form.elements.interest.value}`;
                 lines = [
                     'Bonjour Défi\'style,',
                     '',
