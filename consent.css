@@ -275,8 +275,8 @@
 .legal-brand img {
     width: 42px;
     height: 42px;
-    border-radius: 50%;
-    object-fit: cover;
+    border-radius: 0;
+    object-fit: contain;
 }
 
 .legal-back {

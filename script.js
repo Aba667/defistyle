@@ -148,7 +148,7 @@
             const image = createResponsiveImage({
                 src: look.src,
                 webp: look.webp,
-                alt: look.alt || `Sélection Défi'style ${index + 1}`,
+                alt: look.alt || `Sélection Défi’style ${index + 1}`,
                 width: 960,
                 height: 1200
             });
@@ -206,7 +206,7 @@
                 const image = createResponsiveImage({
                     src: asset.src,
                     webp: asset.webp,
-                    alt: asset.alt || `Photo Défi'style ${index + 1}`,
+                    alt: asset.alt || `Photo Défi’style ${index + 1}`,
                     loading: index === 0 ? 'eager' : 'lazy'
                 });
                 image.img.addEventListener('click', () => openLightbox(asset.src, image.img.alt));
