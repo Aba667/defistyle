@@ -3,7 +3,7 @@
  *
  * Les prochaines dates secondaires et les photos des rendez-vous se gèrent ici,
  * sans modifier le HTML principal. La soirée anniversaire est mise en avant
- * directement dans la section « À venir » de site.html.
+ * directement dans la page « À venir ».
  */
 window.DEFISTYLE_CONTENT = {
     site: {
