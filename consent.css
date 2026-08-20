@@ -40,7 +40,7 @@
 .porte-legal button:focus-visible,
 .footer-cookie-button:hover,
 .footer-cookie-button:focus-visible {
-    color: var(--paper, #f7f4ef);
+            color: var(--paper, #f4ebdf);
     text-decoration: underline;
 }
 
@@ -65,7 +65,7 @@
     padding: 25px 28px;
     border: 1px solid rgba(247, 244, 239, 0.2);
     background: var(--ink, #161616);
-    color: var(--paper, #f7f4ef);
+    color: var(--paper, #f4ebdf);
     box-shadow: 0 18px 55px rgba(0, 0, 0, 0.28);
 }
 
@@ -131,7 +131,7 @@
 
 .cookie-button-primary:hover,
 .cookie-button-primary:focus-visible {
-    background: var(--paper, #f7f4ef);
+    background: var(--paper, #f4ebdf);
 }
 
 .cookie-button-secondary {
@@ -160,7 +160,7 @@
     position: relative;
     width: min(560px, 100%);
     padding: clamp(28px, 5vw, 48px);
-    background: var(--paper, #f7f4ef);
+    background: var(--paper, #f4ebdf);
     color: var(--ink, #161616);
     box-shadow: 0 20px 70px rgba(0, 0, 0, 0.3);
 }
@@ -239,7 +239,7 @@
 
 .legal-page {
     min-height: 100vh;
-    background: var(--paper, #f7f4ef);
+    background: var(--paper, #f4ebdf);
 }
 
 .legal-header {

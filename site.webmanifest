@@ -3,7 +3,7 @@
   "short_name": "Défi’style",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#fbf8f4",
+  "background_color": "#f4ebdf",
   "theme_color": "#d3aa7f",
   "icons": [
     {
