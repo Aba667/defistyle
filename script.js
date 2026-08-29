@@ -239,8 +239,8 @@
             assets: createGalleryAssets({ prefix: 'image', start: 1, end: 175, extension: 'jpeg', padded: true, label: 'Dress to Impress : silhouettes lyonnaises' })
         },
         {
-            containerId: 'gallery-metz',
-            buttonId: 'btn-metz',
+            containerId: 'gallery-launch',
+            buttonId: 'btn-launch',
             assets: createGalleryAssets({ prefix: 'def', start: 1, end: 47, extension: 'jpg', padded: false, label: 'Lancement officiel Défi\'style' })
         }
     ].forEach(createGallery);
