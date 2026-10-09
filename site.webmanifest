@@ -1,13 +1,13 @@
 {
-  "name": "Défi’style, la révérence de la mode",
-  "short_name": "Défi’style",
-  "start_url": "./",
+  "name": "Défi'style — La révérence de la mode",
+  "short_name": "Défi'style",
+  "start_url": "/",
   "display": "standalone",
-  "background_color": "#f4ebdf",
-  "theme_color": "#d3aa7f",
+  "background_color": "#f7f4ef",
+  "theme_color": "#161616",
   "icons": [
     {
-      "src": "photo/identite/defistyle-anemone-256.png",
+      "src": "photo/logo-anemone-256.png",
       "sizes": "256x256",
       "type": "image/png"
     }
