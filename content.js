@@ -9,8 +9,8 @@ window.DEFISTYLE_CONTENT = {
     site: {
         url: 'https://www.defistyle.fr',
         contactEmail: 'defistyle2025@gmail.com',
-        instagramUrl: 'https://instagram.com/defi_style25',
-        instagramHandle: '@defi_style25',
+        instagramUrl: 'https://www.instagram.com/defistyle_/',
+        instagramHandle: '@defistyle_',
         siret: '993 830 017 00014'
     },
 

@@ -3,8 +3,8 @@
   "short_name": "Défi’style",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#f4ebdf",
-  "theme_color": "#d3aa7f",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
   "icons": [
     {
       "src": "photo/identite/defistyle-anemone-256.png",

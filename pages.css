@@ -51,8 +51,8 @@
     margin-top: 22px;
     font-family: var(--serif);
     font-size: clamp(3.3rem, 7vw, 7.6rem);
-    font-weight: 500;
-    letter-spacing: -0.075em;
+    font-weight: 400;
+    letter-spacing: var(--display-tracking);
     line-height: 0.91;
 }
 
@@ -177,7 +177,7 @@
     bottom: 28px;
     z-index: 1;
     padding: 5px 8px;
-    background: rgba(244, 235, 223, 0.88);
+    background: rgba(255, 255, 255, 0.88);
     color: var(--ink);
     font-size: 9px;
     font-weight: 700;
@@ -226,8 +226,8 @@
     margin-top: 26px;
     font-family: var(--serif);
     font-size: clamp(2.7rem, 5.6vw, 6.3rem);
-    font-weight: 500;
-    letter-spacing: -0.07em;
+    font-weight: 400;
+    letter-spacing: var(--display-tracking);
     line-height: 0.94;
 }
 
@@ -283,8 +283,8 @@
     margin-top: 32px;
     font-family: var(--serif);
     font-size: clamp(1.7rem, 2.8vw, 2.7rem);
-    font-weight: 500;
-    letter-spacing: -0.055em;
+    font-weight: 400;
+    letter-spacing: var(--display-tracking);
     line-height: 0.98;
 }
 
@@ -324,14 +324,14 @@
     max-width: 680px;
     font-family: var(--serif);
     font-size: clamp(2rem, 4vw, 4.4rem);
-    letter-spacing: -0.06em;
+    letter-spacing: var(--display-tracking);
     line-height: 0.98;
 }
 
 .page-quote small {
     display: block;
     margin-top: 31px;
-    color: rgba(244, 235, 223, 0.72);
+    color: rgba(255, 255, 255, 0.72);
     font-size: 9px;
     font-weight: 700;
     letter-spacing: 1.6px;
@@ -348,7 +348,7 @@
     margin-top: 12px;
     font-family: var(--serif);
     font-size: clamp(1.7rem, 3vw, 3rem);
-    letter-spacing: -0.05em;
+    letter-spacing: var(--display-tracking);
     line-height: 1;
 }
 
@@ -408,8 +408,8 @@
     margin-top: 17px;
     font-family: var(--serif);
     font-size: clamp(2.7rem, 5vw, 5.6rem);
-    font-weight: 500;
-    letter-spacing: -0.07em;
+    font-weight: 400;
+    letter-spacing: var(--display-tracking);
     line-height: 0.94;
 }
 
@@ -536,8 +536,8 @@
     margin-top: 23px;
     font-family: var(--serif);
     font-size: clamp(1.8rem, 3vw, 2.7rem);
-    font-weight: 500;
-    letter-spacing: -0.06em;
+    font-weight: 400;
+    letter-spacing: var(--display-tracking);
     line-height: 0.98;
 }
 
@@ -634,8 +634,8 @@
     margin-top: 10px;
     font-family: var(--serif);
     font-size: clamp(1.8rem, 3.4vw, 3.4rem);
-    font-weight: 500;
-    letter-spacing: -0.055em;
+    font-weight: 400;
+    letter-spacing: var(--display-tracking);
     line-height: 0.98;
 }
 
@@ -697,8 +697,8 @@
     margin-top: 18px;
     font-family: var(--serif);
     font-size: clamp(2.7rem, 5vw, 5.5rem);
-    font-weight: 500;
-    letter-spacing: -0.07em;
+    font-weight: 400;
+    letter-spacing: var(--display-tracking);
     line-height: 0.94;
 }
 
@@ -738,8 +738,8 @@
 .page-form h2 {
     font-family: var(--serif);
     font-size: clamp(2rem, 3.5vw, 3.5rem);
-    font-weight: 500;
-    letter-spacing: -0.06em;
+    font-weight: 400;
+    letter-spacing: var(--display-tracking);
     line-height: 0.95;
 }
 
@@ -831,7 +831,7 @@
     color: var(--accent);
     font-family: var(--serif);
     font-size: 26px;
-    font-weight: 500;
+    font-weight: 400;
     letter-spacing: 0.06em;
     text-transform: uppercase;
 }
@@ -911,7 +911,7 @@
     display: grid;
     place-items: center;
     padding: 34px;
-    background: rgba(244, 235, 223, 0.96);
+    background: rgba(255, 255, 255, 0.96);
     opacity: 0;
     pointer-events: none;
     transition: opacity 180ms ease;
@@ -969,7 +969,7 @@
 }
 
 .editorial-page .cookie-dialog {
-    background: rgba(244, 235, 223, 0.86);
+    background: rgba(255, 255, 255, 0.86);
 }
 
 @media (max-width: 900px) {

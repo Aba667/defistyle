@@ -4,8 +4,8 @@
     const content = window.DEFISTYLE_CONTENT || {};
     const site = {
         contactEmail: 'defistyle2025@gmail.com',
-        instagramUrl: 'https://instagram.com/defi_style25',
-        instagramHandle: '@defi_style25',
+        instagramUrl: 'https://www.instagram.com/defistyle_/',
+        instagramHandle: '@defistyle_',
         ...(content.site || {})
     };
     const body = document.body;
@@ -157,7 +157,7 @@
             figure.appendChild(image.picture);
 
             const caption = document.createElement('figcaption');
-            caption.innerHTML = `<span>${String(index + 1).padStart(2, '0')}</span><p><small>${escapeHTML(look.category || 'Sélection')}</small>${escapeHTML(look.title || 'Défi\'style')}</p>`;
+            caption.innerHTML = `<p><small>${escapeHTML(look.category || 'Sélection')}</small>${escapeHTML(look.title || 'Défi\'style')}</p>`;
             figure.appendChild(caption);
             fragment.appendChild(figure);
         });
