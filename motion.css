@@ -1,0 +1,210 @@
+/* All content remains visible before JavaScript and in reduced-motion mode. */
+html.lenis {
+    scroll-behavior: auto;
+}
+
+.motion-title {
+    font-kerning: none;
+}
+
+.motion-line-mask {
+    padding-bottom: 0.13em;
+    margin-bottom: -0.13em;
+}
+
+.motion-photo-frame {
+    overflow: clip;
+}
+
+.concept-runway {
+    margin-top: clamp(30px, 5vw, 70px);
+}
+
+.runway-stage {
+    display: none;
+}
+
+.runway-step {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: clamp(24px, 5vw, 84px);
+    align-items: center;
+    padding-block: clamp(24px, 4vw, 54px);
+    border-top: 1px solid var(--line);
+    scroll-margin-top: 110px;
+}
+
+.runway-step-media img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center 30%;
+}
+
+.runway-step-media figcaption,
+.runway-caption,
+.fashion-interlude figcaption {
+    padding-top: 12px;
+    color: var(--muted);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.runway-copy h2,
+.runway-copy h3 {
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: clamp(2.7rem, 4.8vw, 5.1rem);
+    font-weight: 400;
+    line-height: 0.98;
+    letter-spacing: var(--display-tracking);
+    text-wrap: balance;
+}
+
+.runway-copy p {
+    max-width: 28rem;
+    margin-top: 24px;
+    color: var(--muted);
+    font-size: clamp(16px, 1.3vw, 19px);
+    line-height: 1.7;
+}
+
+.runway-copy .page-text-link {
+    margin-top: 24px;
+    line-height: 1.7;
+}
+
+.runway-is-active {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+    gap: clamp(45px, 7vw, 110px);
+    align-items: start;
+}
+
+.runway-is-active .runway-stage {
+    display: block;
+    position: sticky;
+    top: 110px;
+    padding-top: 18px;
+}
+
+.runway-images {
+    position: relative;
+    height: min(66svh, 680px);
+    overflow: hidden;
+    background: var(--editorial-surface);
+}
+
+.runway-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+}
+
+.runway-image:not(:first-child) {
+    visibility: hidden;
+}
+
+.runway-is-active .runway-step {
+    display: flex;
+    align-items: center;
+    min-height: 76svh;
+    padding-block: 50px;
+}
+
+.runway-is-active .runway-step-media {
+    display: none;
+}
+
+.runway-is-active .runway-step.is-current h2,
+.runway-is-active .runway-step.is-current h3 {
+    color: var(--accent);
+}
+
+.runway-is-active .runway-step:first-child {
+    border-top: 0;
+}
+
+.fashion-interlude-frame {
+    height: clamp(340px, 58vw, 760px);
+    overflow: hidden;
+    background: var(--editorial-surface);
+}
+
+.fashion-interlude img {
+    width: 100%;
+    height: 115%;
+    object-fit: cover;
+    object-position: center 30%;
+}
+
+.fashion-interlude figcaption {
+    width: min(var(--editorial-width), calc(100% - 2 * var(--editorial-gutter)));
+    margin-inline: auto;
+    padding-bottom: 16px;
+}
+
+.page-curtain {
+    position: fixed;
+    inset: 0;
+    z-index: 5000;
+    display: grid;
+    place-items: center;
+    visibility: hidden;
+    pointer-events: none;
+    background: var(--white);
+    transform-origin: center bottom;
+}
+
+.page-curtain img {
+    width: 68px;
+    height: 68px;
+    object-fit: contain;
+}
+
+.page-curtain.is-leaving {
+    pointer-events: auto;
+}
+
+@media (max-width: 600px) {
+    .runway-step {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding-block: 30px;
+    }
+
+    .runway-step-media img {
+        max-height: 480px;
+        aspect-ratio: 5 / 4;
+        object-position: center 25%;
+    }
+
+    .runway-copy h2,
+    .runway-copy h3 {
+        font-size: clamp(2.8rem, 11vw, 4rem);
+    }
+
+    .runway-copy p {
+        margin-top: 16px;
+    }
+
+    .fashion-interlude-frame {
+        height: 440px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .page-curtain {
+        display: none;
+    }
+
+    .fashion-interlude img {
+        height: 100%;
+    }
+}

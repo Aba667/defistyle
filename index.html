@@ -32,6 +32,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="consent.css">
     <link rel="stylesheet" href="editorial.css">
+    <link rel="stylesheet" href="vendor/lenis/lenis.css">
+    <link rel="stylesheet" href="motion.css">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -116,10 +118,50 @@
                     <h2 id="concepts-title">Nos <em>concepts</em></h2>
                     <p>Les concepts qui font notre originalité.</p>
                 </div>
-                <div class="front-concept-grid">
-                    <article><h3>Dress to Impress</h3><p>Un concours où chacun présente une tenue originale et affirme son style.</p></article>
-                    <article><h3>Fashion Day</h3><p>Un défilé pour faire découvrir les créations et les personnes qui les portent.</p></article>
-                    <article><h3>Discovering Fashion</h3><p>Des visites, des rencontres et des initiations pour découvrir le milieu de la mode.</p></article>
+                <div class="concept-runway" data-runway>
+                    <figure class="runway-stage" aria-hidden="true">
+                        <div class="runway-images">
+                        <img class="runway-image" src="photo/web/dti2-960.webp" alt="" width="960" height="1440" loading="lazy" decoding="async">
+                        <img class="runway-image" src="photo/lyon-fashion-day/lyon-fashion-day-011.webp" alt="" width="960" height="1440" loading="lazy" decoding="async">
+                        <img class="runway-image" src="photo/web/def2-960.jpg" alt="" width="960" height="1440" loading="lazy" decoding="async">
+                        </div>
+                        <figcaption class="runway-caption">Dress to Impress · Archives Défi’style</figcaption>
+                    </figure>
+                    <div class="runway-steps">
+                    <article class="runway-step" id="accueil-dress-to-impress" data-runway-caption="Dress to Impress · Archives Défi’style">
+                        <figure class="runway-step-media">
+                            <img src="photo/web/dti2-960.webp" alt="Un participant au Dress to Impress portant une tenue blanche et bordeaux" width="960" height="1440" loading="lazy" decoding="async">
+                            <figcaption>Dress to Impress · Archives Défi’style</figcaption>
+                        </figure>
+                        <div class="runway-copy">
+                            <h3>Dress to Impress</h3>
+                            <p>Un concours où chacun présente une tenue originale et affirme son style.</p>
+                            <a class="page-text-link" href="concepts.html#dress-to-impress">Découvrir le concept <span aria-hidden="true">↗</span></a>
+                        </div>
+                    </article>
+                    <article class="runway-step" id="accueil-fashion-day" data-runway-caption="Lyon Fashion Day · 11 juillet 2026">
+                        <figure class="runway-step-media">
+                            <img src="photo/lyon-fashion-day/lyon-fashion-day-011.webp" alt="Une silhouette sur le podium du Lyon Fashion Day" width="960" height="1440" loading="lazy" decoding="async">
+                            <figcaption>Lyon Fashion Day · 11 juillet 2026</figcaption>
+                        </figure>
+                        <div class="runway-copy">
+                            <h3>Fashion Day</h3>
+                            <p>Un défilé pour faire découvrir les créations et les personnes qui les portent.</p>
+                            <a class="page-text-link" href="concepts.html#fashion-day">Découvrir le concept <span aria-hidden="true">↗</span></a>
+                        </div>
+                    </article>
+                    <article class="runway-step" id="accueil-discovering-fashion" data-runway-caption="Détail d’une silhouette · Archives Défi’style">
+                        <figure class="runway-step-media">
+                            <img src="photo/web/def2-960.jpg" alt="Détail d’une silhouette, veste noire et bijoux de main" width="960" height="1440" loading="lazy" decoding="async">
+                            <figcaption>Détail d’une silhouette · Archives Défi’style</figcaption>
+                        </figure>
+                        <div class="runway-copy">
+                            <h3>Discovering Fashion</h3>
+                            <p>Des visites, des rencontres et des initiations pour découvrir le milieu de la mode.</p>
+                            <a class="page-text-link" href="concepts.html#discovering-fashion">Découvrir le concept <span aria-hidden="true">↗</span></a>
+                        </div>
+                    </article>
+                    </div>
                 </div>
                 <div class="page-actions"><a class="page-button" href="concepts.html">Découvrir nos concepts <span aria-hidden="true">↗</span></a></div>
             </div>
@@ -169,6 +211,13 @@
                 </a>
             </div>
         </section>
+
+        <figure class="fashion-interlude">
+            <div class="fashion-interlude-frame">
+                <img src="photo/lyon-fashion-day/lyon-fashion-day-095.webp" alt="Portrait mode réalisé lors du Lyon Fashion Day" width="960" height="1440" loading="lazy" decoding="async">
+            </div>
+            <figcaption>Lyon Fashion Day · Dans les archives Défi’style</figcaption>
+        </figure>
 
         <section class="front-section" aria-labelledby="more-title">
             <div class="shell">
@@ -244,5 +293,10 @@
 
     <script src="script.js" defer></script>
     <script src="consent.js" defer></script>
+    <script src="vendor/gsap/gsap.min.js" defer></script>
+    <script src="vendor/gsap/ScrollTrigger.min.js" defer></script>
+    <script src="vendor/gsap/SplitText.min.js" defer></script>
+    <script src="vendor/lenis/lenis.min.js" defer></script>
+    <script src="motion.js" defer></script>
 </body>
 </html>
