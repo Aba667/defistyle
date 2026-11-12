@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" href="photo/identite/defistyle-anemone-256.png"><link rel="apple-touch-icon" href="photo/identite/defistyle-anemone-256.png"><link rel="manifest" href="site.webmanifest"><link rel="stylesheet" href="emoji.css"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="pages.css"><link rel="stylesheet" href="consent.css">
     <link rel="stylesheet" href="editorial.css">
 </head>
-<body class="editorial-page">
+<body class="editorial-page photo-page">
     <a class="skip-link" href="#contenu">Aller au contenu</a>
     <header class="site-header" id="top">
         <nav class="nav-shell" aria-label="Navigation principale">
@@ -20,9 +20,10 @@
                 <span class="menu-toggle-icon" aria-hidden="true"><i></i><i></i></span>
             </button>
             <ul class="nav-links" id="site-nav">
-                <li><a href="projet.html">Le projet</a></li>
-                <li><a href="concepts.html">Concepts</a></li>
-                <li><a href="public.html">Public</a></li>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="projet.html">Histoire et identité</a></li>
+                <li><a href="concepts.html">Nos concepts</a></li>
+                <li><a href="public.html">Nos publics</a></li>
                 <li><a href="equipe.html">L’équipe</a></li>
                 <li><a href="a-venir.html">Événements</a></li>
                 <li><a href="journal.html">Le journal</a></li>
@@ -34,7 +35,17 @@
     </header>
 
     <main class="page-main" id="contenu">
-        <section class="page-hero"><div class="page-container"><nav class="editorial-trail" aria-label="Fil d’Ariane"><a href="index.html">Accueil</a><span aria-current="page">Nous rejoindre</span></nav><h1 class="page-title">Une place pour<br><em>chaque énergie.</em></h1><p class="page-lede">Défi’style avance grâce aux personnes qui donnent de leur temps, de leurs idées et de leur style. Il n'y a pas une seule façon de participer.</p><div class="page-actions"><a class="page-button" href="#contact-form">Nous présenter un projet <span aria-hidden="true">↗</span></a><a class="page-text-link" href="collaborations.html">Voir les collaborations <span aria-hidden="true">↗</span></a></div></div></section>
+        <section class="page-hero">
+            <div class="page-container context-hero-grid">
+                <div class="page-hero-copy">
+                    <nav class="editorial-trail" aria-label="Fil d’Ariane"><a href="index.html">Accueil</a><span aria-current="page">Nous rejoindre</span></nav><h1 class="page-title">Une place pour<br><em>chaque énergie.</em></h1><p class="page-lede">Défi’style avance grâce aux personnes qui donnent de leur temps, de leurs idées et de leur style. Il n'y a pas une seule façon de participer.</p><div class="page-actions"><a class="page-button" href="#contact-form">Nous présenter un projet <span aria-hidden="true">↗</span></a><a class="page-text-link" href="collaborations.html">Voir les collaborations <span aria-hidden="true">↗</span></a></div>
+                </div>
+                <figure class="context-hero-photo">
+                    <img src="photo/web/dti3-960.webp" alt="Une participante à Dress to Impress pose devant le photocall" width="960" height="1200" fetchpriority="high" decoding="async">
+                    <figcaption>Dress to Impress · Le Diable s’habille en Prada</figcaption>
+                </figure>
+            </div>
+        </section>
         <section class="page-section page-section-light"><div class="page-container"><div class="page-section-head"><p class="page-section-index">Comment participer</p><p class="page-section-intro">Choisissez la porte qui vous ressemble. Nous prendrons le temps de comprendre votre envie.</p></div><div class="page-grid-3"><article class="page-card"><p class="page-card-kicker">Modèles</p><h3>Oser la scène.</h3><p>Vous voulez découvrir le défilé, travailler votre présence et porter un style qui vous ressemble ? Écrivez-nous pour connaître les prochains appels.</p><a class="page-card-link" href="#contact-form" data-participation-type="Créateur·rice ou modèle">Je veux défiler ·</a></article><article class="page-card"><p class="page-card-kicker">Créateurs</p><h3>Faire circuler une idée.</h3><p>Vous créez des vêtements, des accessoires ou des images ? Défi’style aime les univers qui ont quelque chose à raconter.</p><a class="page-card-link" href="#contact-form" data-participation-type="Créateur·rice ou modèle">Présenter mon univers ·</a></article><article class="page-card"><p class="page-card-kicker">Équipe et bénévoles</p><h3>Construire les coulisses.</h3><p>Organisation, accueil, beauté, photo, vidéo ou production : chaque compétence compte quand la scène se prépare.</p><a class="page-card-link" href="#contact-form" data-participation-type="Photographe, styliste ou bénévole">Proposer mon aide ·</a></article></div></div></section>
         <section class="page-section page-section-dark"><div class="page-container"><div class="page-section-head"><p class="page-section-index">Notre manière de faire</p><p class="page-section-intro">Le respect, la curiosité et l'envie de progresser ensemble restent au centre de chaque rendez-vous.</p></div><div class="page-grid-2"><div class="page-quote"><p>Le style devient plus fort quand chacun peut l'habiter à sa façon.</p><small>Ose le défilé, vis le style.</small></div><article class="page-card"><p class="page-card-kicker">Première étape</p><h3>Un message suffit.</h3><p>Dites-nous qui vous êtes, ce que vous aimez et ce que vous aimeriez faire. Il n'est pas nécessaire d'avoir déjà tout un parcours.</p><a class="page-card-link" href="nous-ecrire.html">Écrire à l'équipe ·</a></article></div></div></section>
         <section class="page-section page-section-light" aria-labelledby="participation-title">
@@ -77,13 +88,13 @@
                     <p>La révérence de la mode</p>
                 </div>
                 <nav aria-label="Navigation de pied de page">
-                    <a href="projet.html">Le projet</a>
-                    <a href="concepts.html">Concepts</a>
-                    <a href="public.html">Public</a>
+                    <a href="projet.html">Histoire et identité</a>
+                    <a href="concepts.html">Nos concepts</a>
+                    <a href="public.html">Nos publics</a>
                     <a href="equipe.html">L’équipe</a>
                     <a href="collaborations.html">Collaborations</a>
                     <a href="nous-ecrire.html">Contact</a>
-                    <a href="https://www.instagram.com/defistyle_/" target="_blank" rel="noreferrer">@defistyle_ <span aria-hidden="true">↗</span></a>
+                    <a href="https://www.instagram.com/defistyle_/" target="_blank" rel="noreferrer" class="instagram-link"><svg class="instagram-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true" focusable="false"><rect x="4.5" y="4.5" width="23" height="23" rx="7"/><circle cx="16" cy="16" r="5.4"/><circle cx="23" cy="9" r="1.6" fill="currentColor" stroke="none"/></svg><span>@defistyle_</span></a>
                 </nav>
             </div>
             <div class="editorial-footer-legal">

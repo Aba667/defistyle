@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" href="photo/identite/defistyle-anemone-256.png"><link rel="apple-touch-icon" href="photo/identite/defistyle-anemone-256.png"><link rel="manifest" href="site.webmanifest"><link rel="stylesheet" href="emoji.css"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="pages.css"><link rel="stylesheet" href="consent.css">
     <link rel="stylesheet" href="editorial.css">
 </head>
-<body class="editorial-page">
+<body class="editorial-page photo-page">
     <a class="skip-link" href="#contenu">Aller au contenu</a>
     <header class="site-header" id="top">
         <nav class="nav-shell" aria-label="Navigation principale">
@@ -20,9 +20,10 @@
                 <span class="menu-toggle-icon" aria-hidden="true"><i></i><i></i></span>
             </button>
             <ul class="nav-links" id="site-nav">
-                <li><a href="projet.html">Le projet</a></li>
-                <li><a href="concepts.html">Concepts</a></li>
-                <li><a href="public.html">Public</a></li>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="projet.html">Histoire et identité</a></li>
+                <li><a href="concepts.html">Nos concepts</a></li>
+                <li><a href="public.html">Nos publics</a></li>
                 <li><a href="equipe.html">L’équipe</a></li>
                 <li><a href="a-venir.html">Événements</a></li>
                 <li><a href="journal.html">Le journal</a></li>
@@ -34,8 +35,18 @@
     </header>
 
     <main class="page-main" id="contenu">
-        <section class="page-hero"><div class="page-container"><nav class="editorial-trail" aria-label="Fil d’Ariane"><a href="index.html">Accueil</a><span aria-current="page">Nous écrire</span></nav><h1 class="page-title">Parlons de votre<br><em>prochaine idée.</em></h1><p class="page-lede">Une question, une envie de participer, une proposition de collaboration ou simplement un mot à laisser ? L'équipe Défi’style vous répond.</p></div></section>
-        <section class="page-section page-section-light"><div class="page-container page-contact-grid"><div class="page-contact-copy"><p class="page-kicker">Nous écrire</p><h2>Un message peut<br><em>ouvrir une scène.</em></h2><p>Remplissez le formulaire. Votre messagerie s'ouvrira ensuite avec un message prêt à envoyer, que vous pourrez relire avant de l'expédier.</p><div class="page-contact-links"><a data-contact-email href="mailto:defistyle2025@gmail.com">defistyle2025@gmail.com ↗</a><a data-instagram-link href="https://www.instagram.com/defistyle_/" target="_blank" rel="noreferrer"><span data-instagram-handle>@defistyle_</span> ↗</a></div></div><form class="page-form" data-mail-form="contact"><h2>Votre message</h2><div class="page-form-grid"><div class="page-form-field"><label for="contact-interest">Je vous écris comme</label><select id="contact-interest" name="interest" required><option value="">Choisir une option</option><option>Modèle</option><option>Créateur ou créatrice</option><option>Partenaire</option><option>Bénévole</option><option>Journaliste</option><option>Autre</option></select></div><div class="page-form-field"><label for="contact-name">Nom ou structure</label><input id="contact-name" name="name" type="text" autocomplete="name" required></div><div class="page-form-field page-form-field-full"><label for="contact-email">Adresse email</label><input id="contact-email" name="email" type="email" autocomplete="email" required></div><div class="page-form-field page-form-field-full"><label for="contact-message">Votre message</label><textarea id="contact-message" name="message" required></textarea></div></div><div class="page-form-actions"><button class="page-button" type="submit">Préparer mon message <span aria-hidden="true">↗</span></button><p class="page-form-note">Les informations saisies servent uniquement à préparer votre email.</p></div><p class="form-status" aria-live="polite"></p></form></div></section>
+        <section class="page-hero">
+            <div class="page-container context-hero-grid">
+                <div class="page-hero-copy">
+                    <nav class="editorial-trail" aria-label="Fil d’Ariane"><a href="index.html">Accueil</a><span aria-current="page">Nous écrire</span></nav><h1 class="page-title">Parlons de votre<br><em>prochaine idée.</em></h1><p class="page-lede">Une question, une envie de participer, une proposition de collaboration ou simplement un mot à laisser ? L'équipe Défi’style vous répond.</p>
+                </div>
+                <figure class="context-hero-photo">
+                    <img src="photo/web/def2-960.jpg" alt="Détail d’une silhouette avec une veste noire et des bijoux de main" width="639" height="960" fetchpriority="high" decoding="async">
+                    <figcaption>Un détail de silhouette · Archives Défi’style</figcaption>
+                </figure>
+            </div>
+        </section>
+        <section class="page-section page-section-light"><div class="page-container page-contact-grid"><div class="page-contact-copy"><p class="page-kicker">Nous écrire</p><h2>Un message peut<br><em>ouvrir une scène.</em></h2><p>Remplissez le formulaire. Votre messagerie s'ouvrira ensuite avec un message prêt à envoyer, que vous pourrez relire avant de l'expédier.</p><div class="page-contact-links"><a data-contact-email href="mailto:defistyle2025@gmail.com">defistyle2025@gmail.com ↗</a><a data-instagram-link href="https://www.instagram.com/defistyle_/" target="_blank" rel="noreferrer" class="instagram-link"><svg class="instagram-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true" focusable="false"><rect x="4.5" y="4.5" width="23" height="23" rx="7"/><circle cx="16" cy="16" r="5.4"/><circle cx="23" cy="9" r="1.6" fill="currentColor" stroke="none"/></svg><span>@defistyle_</span></a></div></div><form class="page-form" data-mail-form="contact"><h2>Votre message</h2><div class="page-form-grid"><div class="page-form-field"><label for="contact-interest">Je vous écris comme</label><select id="contact-interest" name="interest" required><option value="">Choisir une option</option><option>Modèle</option><option>Créateur ou créatrice</option><option>Partenaire</option><option>Bénévole</option><option>Journaliste</option><option>Autre</option></select></div><div class="page-form-field"><label for="contact-name">Nom ou structure</label><input id="contact-name" name="name" type="text" autocomplete="name" required></div><div class="page-form-field page-form-field-full"><label for="contact-email">Adresse email</label><input id="contact-email" name="email" type="email" autocomplete="email" required></div><div class="page-form-field page-form-field-full"><label for="contact-message">Votre message</label><textarea id="contact-message" name="message" required></textarea></div></div><div class="page-form-actions"><button class="page-button" type="submit">Préparer mon message <span aria-hidden="true">↗</span></button><p class="page-form-note">Les informations saisies servent uniquement à préparer votre email.</p></div><p class="form-status" aria-live="polite"></p></form></div></section>
         <section class="page-section page-section-dark"><div class="page-container"><div class="page-section-head"><p class="page-section-index">Une autre porte</p><p class="page-section-intro">Pour découvrir le projet avant d'écrire, commencez par son histoire ou par les prochaines dates.</p></div><div class="page-grid-2"><article class="page-card"><p class="page-card-kicker">Le projet</p><h3>Comprendre d'où nous venons.</h3><p>La genèse, les premières scènes et le sens de l'anémone dans notre identité.</p><a class="page-card-link" href="projet.html">Lire notre histoire ·</a></article><article class="page-card"><p class="page-card-kicker">À venir</p><h3>Voir où nous allons.</h3><p>Le prochain événement et les rendez-vous qui s'écriront ensuite.</p><a class="page-card-link" href="a-venir.html">Découvrir l'agenda ·</a></article></div></div></section>
         <section class="page-section page-section-light" aria-labelledby="presse-title">
             <div class="page-container">
@@ -55,13 +66,13 @@
                     <p>La révérence de la mode</p>
                 </div>
                 <nav aria-label="Navigation de pied de page">
-                    <a href="projet.html">Le projet</a>
-                    <a href="concepts.html">Concepts</a>
-                    <a href="public.html">Public</a>
+                    <a href="projet.html">Histoire et identité</a>
+                    <a href="concepts.html">Nos concepts</a>
+                    <a href="public.html">Nos publics</a>
                     <a href="equipe.html">L’équipe</a>
                     <a href="collaborations.html">Collaborations</a>
                     <a href="nous-ecrire.html">Contact</a>
-                    <a href="https://www.instagram.com/defistyle_/" target="_blank" rel="noreferrer">@defistyle_ <span aria-hidden="true">↗</span></a>
+                    <a href="https://www.instagram.com/defistyle_/" target="_blank" rel="noreferrer" class="instagram-link"><svg class="instagram-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true" focusable="false"><rect x="4.5" y="4.5" width="23" height="23" rx="7"/><circle cx="16" cy="16" r="5.4"/><circle cx="23" cy="9" r="1.6" fill="currentColor" stroke="none"/></svg><span>@defistyle_</span></a>
                 </nav>
             </div>
             <div class="editorial-footer-legal">
