@@ -40,6 +40,9 @@
         // Storage can be unavailable; normal navigation still works.
     }
     if (arriving && !reducedMotion.matches) {
+        gsap.fromTo(flower, { rotation: -18, scale: 0.8 }, {
+            rotation: 0, scale: 1, duration: 0.48, ease: 'power2.out'
+        });
         gsap.fromTo(curtain,
             { autoAlpha: 1, clipPath: 'inset(0% 0% 0% 0%)' },
             {
@@ -77,6 +80,9 @@
         };
         // A fallback also completes navigation if the animation loop is suspended.
         const fallback = window.setTimeout(navigate, 900);
+        gsap.fromTo(flower, { rotation: 0, scale: 0.85 }, {
+            rotation: 18, scale: 1, duration: 0.38, ease: 'power2.out'
+        });
         gsap.fromTo(curtain,
             { autoAlpha: 1, clipPath: 'inset(100% 0% 0% 0%)' },
             {
@@ -89,9 +95,15 @@
         );
     });
 
-    media.add('(prefers-reduced-motion: no-preference)', () => {
+    media.add({
+        motion: '(prefers-reduced-motion: no-preference)',
+        compact: '(max-width: 1023px), (pointer: coarse)'
+    }, (context) => {
+        if (!context.conditions.motion) return;
+        const compact = context.conditions.compact;
         const splitTitles = [];
         const seenPhotos = new WeakSet();
+        const sectionStart = compact ? 'top 84%' : 'top 92%';
 
         // Splitting follows actual line breaks and recomputes after font/width changes.
         const animateTitle = (heading, entrance) => {
@@ -103,15 +115,17 @@
                 onSplit(self) {
                     self.masks.forEach((mask) => mask.classList.add('motion-line-mask'));
                     return gsap.from(self.lines, {
-                        yPercent: 105,
+                        yPercent: compact ? 120 : 105,
+                        rotation: compact ? 2 : 0,
+                        transformOrigin: 'left bottom',
                         opacity: 0,
-                        duration: entrance ? 0.95 : 0.75,
-                        stagger: 0.09,
+                        duration: compact ? 1.05 : (entrance ? 0.95 : 0.75),
+                        stagger: compact ? 0.14 : 0.09,
                         ease: 'power3.out',
-                        delay: entrance ? 0.12 : 0,
+                        delay: entrance ? (arriving ? 0.4 : 0.16) : 0,
                         scrollTrigger: entrance ? undefined : {
                             trigger: heading,
-                            start: 'top 92%',
+                            start: sectionStart,
                             once: true
                         }
                     });
@@ -125,29 +139,47 @@
         });
         document.querySelectorAll(
             '.front-section > .shell > h2, .front-section-head h2, ' +
-            '.front-feature h2, .front-summary-grid h2, .page-section-title'
+            '.front-feature h2, .front-summary-grid h2, .page-section-title, ' +
+            '.page-story-copy h2, .page-event-copy h2, .page-contact-copy h2'
         ).forEach((heading) => animateTitle(heading, false));
+        if (compact) {
+            document.querySelectorAll('.runway-copy h2, .runway-copy h3')
+                .forEach((heading) => animateTitle(heading, false));
+        }
 
         const revealPhoto = (frame, entrance = false) => {
-            if (seenPhotos.has(frame) || frame.closest('[data-runway]')) return;
+            if (seenPhotos.has(frame) || (!compact && frame.closest('[data-runway]'))) return;
             seenPhotos.add(frame);
             frame.classList.add('motion-photo-frame');
             const archive = frame.parentElement.classList.contains('photo-gallery') ||
                 frame.classList.contains('curated-item');
             const order = archive ? [...frame.parentElement.children].indexOf(frame) : 0;
-            gsap.from(frame, {
-                clipPath: 'inset(0% 0% 100% 0%)',
-                y: archive ? 18 : 0,
-                delay: archive ? (order % 3) * 0.06 : 0,
-                duration: entrance ? 1.15 : 0.9,
-                ease: 'power3.inOut',
-                scrollTrigger: entrance ? undefined : {
+            // Mobile hero photos often begin below the fold. Reveal them on arrival.
+            const inView = entrance && frame.getBoundingClientRect().top < innerHeight * (compact ? 0.65 : 0.84);
+            const timeline = gsap.timeline({
+                delay: archive ? (order % (compact ? 2 : 3)) * 0.08 : 0,
+                scrollTrigger: inView ? undefined : {
                     trigger: frame,
-                    start: 'top 93%',
+                    start: compact ? 'top 74%' : 'top 93%',
                     once: true
-                },
+                }
+            });
+            timeline.from(frame, {
+                clipPath: compact ? 'inset(0% 100% 0% 0%)' : 'inset(0% 0% 100% 0%)',
+                y: compact ? 34 : (archive ? 18 : 0),
+                duration: compact ? 1.05 : (entrance ? 1.15 : 0.9),
+                ease: compact ? 'power2.out' : 'power3.inOut',
                 clearProps: 'clipPath,transform'
             });
+            const images = frame.querySelectorAll('img');
+            if (images.length && !frame.matches('.front-identity')) {
+                timeline.from(images, {
+                    scale: compact ? 1.14 : 1.055,
+                    duration: compact ? 1.25 : 1.15,
+                    ease: 'power2.out',
+                    clearProps: 'transform'
+                }, 0);
+            }
         };
 
         document.querySelectorAll(
@@ -158,28 +190,81 @@
             '.page-photo-grid > *, .page-article > picture, .page-article > img, ' +
             '.photo-gallery > picture, .curated-item'
         ).forEach((frame) => revealPhoto(frame));
+        if (compact) {
+            document.querySelectorAll('.runway-step-media').forEach((frame) => revealPhoto(frame));
+            document.querySelectorAll('.runway-copy').forEach((copy) => {
+                gsap.from(copy.querySelectorAll('p, a'), {
+                    y: 26, opacity: 0, duration: 0.75, stagger: 0.12,
+                    ease: 'power2.out',
+                    scrollTrigger: { trigger: copy, start: sectionStart, once: true },
+                    clearProps: 'transform,opacity'
+                });
+            });
+            document.querySelectorAll('.fashion-interlude-frame').forEach((frame) => {
+                gsap.fromTo(frame.querySelector('img'), { yPercent: -9 }, {
+                    yPercent: 0, ease: 'none',
+                    scrollTrigger: {
+                        trigger: frame, start: 'top bottom', end: 'bottom top', scrub: 0.4
+                    }
+                });
+            });
+        }
 
         // New archive batches receive the same short reveal when they enter view.
         const galleries = document.querySelectorAll('.photo-gallery');
         const galleryObserver = new MutationObserver((mutations) => {
-            mutations.forEach((mutation) => {
-                mutation.addedNodes.forEach((node) => {
-                    if (node.nodeType === Node.ELEMENT_NODE) revealPhoto(node);
+            context.add(() => {
+                mutations.forEach((mutation) => {
+                    mutation.addedNodes.forEach((node) => {
+                        if (node.nodeType === Node.ELEMENT_NODE) revealPhoto(node);
+                    });
                 });
+                ScrollTrigger.refresh();
             });
-            ScrollTrigger.refresh();
         });
         galleries.forEach((gallery) => galleryObserver.observe(gallery, { childList: true }));
 
         document.querySelectorAll('.front-directory-grid, .page-grid-3, .public-list')
             .forEach((row) => {
-                gsap.from(row.children, {
-                    y: 24, opacity: 0, duration: 0.6, stagger: 0.08,
-                    ease: 'power2.out',
-                    scrollTrigger: { trigger: row, start: 'top 92%', once: true },
-                    clearProps: 'transform,opacity'
+                const groups = compact ? [...row.children] : [row];
+                groups.forEach((trigger) => {
+                    gsap.from(compact ? trigger : row.children, {
+                        y: compact ? 48 : 24, opacity: 0,
+                        duration: compact ? 0.85 : 0.6,
+                        stagger: compact ? 0 : 0.08,
+                        ease: 'power2.out',
+                        scrollTrigger: { trigger, start: sectionStart, once: true },
+                        clearProps: 'transform,opacity'
+                    });
                 });
             });
+
+        const siteHeader = document.querySelector('.site-header');
+        const progress = document.createElement('div');
+        progress.className = 'reading-progress';
+        progress.setAttribute('aria-hidden', 'true');
+        if (siteHeader) {
+            siteHeader.appendChild(progress);
+            gsap.fromTo(progress, { scaleX: 0 }, {
+                scaleX: 1, ease: 'none',
+                scrollTrigger: { start: 0, end: 'max', scrub: 0.2 }
+            });
+        }
+
+        const navigation = document.querySelector('#site-nav');
+        const menuObserver = new MutationObserver(() => {
+            if (!navigation) return;
+            gsap.killTweensOf(navigation.children);
+            if (navigation.classList.contains('is-open')) {
+                gsap.fromTo(navigation.children, { x: -22, opacity: 0 }, {
+                    x: 0, opacity: 1, duration: 0.42, stagger: 0.035,
+                    ease: 'power2.out', clearProps: 'transform,opacity'
+                });
+            } else {
+                gsap.set(navigation.children, { clearProps: 'transform,opacity' });
+            }
+        });
+        if (navigation) menuObserver.observe(navigation, { attributes: true, attributeFilter: ['class'] });
 
         const refresh = () => ScrollTrigger.refresh();
         document.fonts?.ready.then(refresh);
@@ -187,6 +272,12 @@
 
         return () => {
             galleryObserver.disconnect();
+            menuObserver.disconnect();
+            if (navigation) {
+                gsap.killTweensOf(navigation.children);
+                gsap.set(navigation.children, { clearProps: 'transform,opacity' });
+            }
+            progress.remove();
             splitTitles.forEach((split) => split.revert());
             document.querySelectorAll('.motion-title').forEach((heading) => {
                 heading.classList.remove('motion-title');
@@ -297,14 +388,4 @@
         };
     });
 
-    // Below the desktop breakpoint, the photo accompanies its own concept.
-    media.add('(max-width: 1023px) and (prefers-reduced-motion: no-preference)', () => {
-        document.querySelectorAll('.runway-step-media').forEach((frame) => {
-            gsap.from(frame, {
-                opacity: 0, y: 22, duration: 0.65, ease: 'power2.out',
-                scrollTrigger: { trigger: frame, start: 'top 93%', once: true },
-                clearProps: 'opacity,transform'
-            });
-        });
-    });
 })();
